@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.18",
+  "version": "2026.10.18-v12",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
       "description": "86 items; 133 textures",
-      "revision": "v11",
-      "bytes": 2156618,
-      "sha256": "e3c24ee2ddbd4764a8ad1fc7c66a62d0654f35dd6f2fb637802a0731fdd35c19"
+      "revision": "v12",
+      "bytes": 2291560,
+      "sha256": "d19d23e1c5f5118e14a5e6c2dbd855bf33354083d233e26defdc099ff2ce9744"
     },
     {
       "file": "pak07_dir.vpk",
@@ -52,7 +52,10 @@
   "compatibility_checks": {
     "scripts/abilities.vdata_c": {
       "sha256": "2678976dfef4fec75a310effe454033574e16a407befa468d81ef3511c6680d0",
-      "matched_stock_build_ids": ["25999968", "26015805"],
+      "matched_stock_build_ids": [
+        "25999968",
+        "26015805"
+      ],
       "scope": "Stock ability resource equality only; not full runtime acceptance."
     }
   }

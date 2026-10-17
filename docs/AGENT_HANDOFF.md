@@ -12,7 +12,7 @@
 
 | Пакет | Содержимое |
 | --- | --- |
-| pak06_dir.vpk | Иконки v11: 86 предметов, 133 текстуры |
+| pak06_dir.vpk | Иконки v12: 86 предметов, 133 текстуры; Inhibitor — Skadi + Enfeeble + Mage Slayer тремя отдельными частями |
 | pak07_dir.vpk | Принятый Counterspell: оболочка и обод Антимага |
 | pak08_dir.vpk | Принятый Refresher: зелёная спираль |
 | pak09_dir.vpk | Shiva, красная Arctic Blast, красный Frostbite без проекции и визуальные привязки пассивных барьеров |

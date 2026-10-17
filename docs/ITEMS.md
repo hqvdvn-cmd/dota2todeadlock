@@ -69,7 +69,7 @@
 | Indomitable | Pavise + Linken's Sphere + Octarine Core | Красный Pavise + Linken's Sphere + Octarine; автоматическое снятие контроля не тождественно блоку направленного заклинания. |
 | Weapon Shielding | Pavise | Weapon Shielding срабатывает от значительного урона оружием; Pavise активно применяется на союзника. |
 | Bullet Resilience | Platemail | Сопротивление пулям Deadlock и физическая броня Dota рассчитываются по-разному. |
-| Inhibitor | Eye of Skadi + Mage Slayer | Skadi + Mage Slayer: Inhibitor снижает весь исходящий урон после накопления; Mage Slayer снижает урон заклинаний, Skadi снижает восстановление здоровья. |
+| Inhibitor | Eye of Skadi + Enfeeble + Mage Slayer | Skadi + Enfeeble + Mage Slayer: Inhibitor снижает весь исходящий урон и лечение попаданиями; Enfeeble снижает урон атак, Mage Slayer — урон заклинаний, Skadi — восстановление здоровья. Условия применения различаются. |
 | Crippling Headshot | Desolator + Eye of Skadi | Двойная Desolator + Skadi; в Deadlock требуется попадание в голову. |
 | Ricochet | Split Shot | Ricochet рикошетит от цели и переносит bullet procs; базовый Split Shot выпускает дополнительные стрелы без обычных эффектов атак. |
 | Capacitor | Mjollnir | Конкретные условия накопления и срабатывания Capacitor отличаются от Mjollnir. |
