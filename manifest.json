@@ -48,5 +48,12 @@
     "Stock shop and hero selection. No hero model replacements.",
     "Shiva/barrier packages include compiled resource overrides tied to the tested game snapshot. Revalidate after game updates."
   ],
-  "source_steam_build_id": "25999968"
+  "source_steam_build_id": "25999968",
+  "compatibility_checks": {
+    "scripts/abilities.vdata_c": {
+      "sha256": "2678976dfef4fec75a310effe454033574e16a407befa468d81ef3511c6680d0",
+      "matched_stock_build_ids": ["25999968", "26015805"],
+      "scope": "Stock ability resource equality only; not full runtime acceptance."
+    }
+  }
 }
