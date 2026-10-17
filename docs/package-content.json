@@ -1,0 +1,36 @@
+[
+  {
+    "file": "pak06_dir.vpk",
+    "entries": 130,
+    "crc": "PASS",
+    "nontexture_paths": []
+  },
+  {
+    "file": "pak07_dir.vpk",
+    "entries": 7,
+    "crc": "PASS",
+    "nontexture_paths": [
+      "models/particle/soccer_ball.vmdl_c"
+    ]
+  },
+  {
+    "file": "pak08_dir.vpk",
+    "entries": 4,
+    "crc": "PASS",
+    "nontexture_paths": []
+  },
+  {
+    "file": "pak09_dir.vpk",
+    "entries": 42,
+    "crc": "PASS",
+    "nontexture_paths": [
+      "scripts/abilities.vdata_c"
+    ]
+  },
+  {
+    "file": "pak10_dir.vpk",
+    "entries": 47,
+    "crc": "PASS",
+    "nontexture_paths": []
+  }
+]

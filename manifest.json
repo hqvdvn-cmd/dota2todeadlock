@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "version": "2026.10.17",
+  "platform": "Windows",
+  "packages": [
+    {
+      "file": "pak06_dir.vpk",
+      "component": "Item icons",
+      "description": "84 items; 130 textures",
+      "revision": "v10",
+      "bytes": 2005861,
+      "sha256": "b8016afe874ae0fc47c55fb6661afac9ac5b75b6ba15bcf50de2b257ada33e52"
+    },
+    {
+      "file": "pak07_dir.vpk",
+      "component": "Counterspell",
+      "description": "Anti-Mage shell and rim",
+      "revision": "v4",
+      "bytes": 300680,
+      "sha256": "71705d35b5028d2973081c0eba860f07ecd860cc79b2d6d1c010fe1641770d84"
+    },
+    {
+      "file": "pak08_dir.vpk",
+      "component": "Refresher",
+      "description": "Green Dota spiral",
+      "revision": "v1",
+      "bytes": 97833,
+      "sha256": "11d56b4245ce5872cb78fe8495549399afdc8f16dad58a7e08f9cf4d0994d391"
+    },
+    {
+      "file": "pak09_dir.vpk",
+      "component": "Shiva and barrier bindings",
+      "description": "Cold Front wave, red Arctic Blast/Frostbite and passive barrier visual bindings",
+      "revision": "accepted frostbite projection fix + bindings v2",
+      "bytes": 6234185,
+      "sha256": "03d26c54f8936b59c48209552e3cb5748e0a5cd632dffc722d68d963f6542636"
+    },
+    {
+      "file": "pak10_dir.vpk",
+      "component": "Pavise barriers",
+      "description": "Cyan, gold and red transparent shells",
+      "revision": "v4",
+      "bytes": 1203416,
+      "sha256": "ca48f7c6a0e556379869950d758c6e6acb8ac386efc8e0aaea201c286d53101c"
+    }
+  ],
+  "notes": [
+    "Stock shop and hero selection. No hero model replacements.",
+    "Shiva/barrier packages include compiled resource overrides tied to the tested game snapshot. Revalidate after game updates."
+  ],
+  "source_steam_build_id": "25999968"
+}
