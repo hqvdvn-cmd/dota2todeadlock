@@ -22,7 +22,7 @@ class InstallTests(unittest.TestCase):
         self.addons = self.game / "addons"
         self.addons.mkdir(parents=True)
         (self.game / "pak01_dir.vpk").write_bytes(b"base-game")
-        self.config = b'"GameInfo" { FileSystem { SearchPaths { Game citadel/addons Game citadel } } }'
+        self.config = b'"GameInfo" { FileSystem { SearchPaths { Game citadel/addons Mod citadel Write citadel Game citadel Mod core Write core Game core } } }'
         (self.game / "gameinfo.gi").write_bytes(self.config)
         (self.addons / "pak01_dir.vpk").write_bytes(b"other-mod")
         (self.addons / ".dmm.json").write_bytes(b"other-config")
@@ -100,6 +100,98 @@ class InstallTests(unittest.TestCase):
         original = b'GameInfo { FileSystem { SearchPaths { Game citadel Game citadel/addons } } }'
         (self.game / "gameinfo.gi").write_bytes(original)
         with self.assertRaises(RuntimeError): self.run_mod(apply=True)
+
+    def assert_base_routes(self, content):
+        import re
+        for key in [b"Mod", b"Write"]:
+            for value in [b"citadel", b"core"]:
+                pattern = rb'\b' + key + rb'"?\s+"?' + value + rb'"?(?=\s|\})'
+                self.assertEqual(len(re.findall(pattern, content)), 1)
+
+    def test_stock_config_gets_explicit_base_routes(self):
+        original = (b'\xef\xbb\xbfGameInfo { FileSystem { SearchPaths\r\n{\r\n'
+                    b' Game_UILanguage citadel_*LANGUAGE*\r\n Game_LowViolence citadel_lv\r\n'
+                    b' Game citadel\r\n Game core\r\n} } OtherSetting "keep" }')
+        (self.game / "gameinfo.gi").write_bytes(original)
+        result = self.run_mod(apply=True, enable_addons=True)
+        actual = (self.game / "gameinfo.gi").read_bytes()
+        self.assert_base_routes(actual)
+        self.assertIn(b"Game_UILanguage citadel_*LANGUAGE*", actual)
+        self.assertIn(b"Game_LowViolence citadel_lv", actual)
+        self.assertIn(b'OtherSetting "keep"', actual)
+        self.assertTrue(actual.startswith(b"\xef\xbb\xbf"))
+        self.assertNotIn(b"\n", actual.replace(b"\r\n", b""))
+        self.assertEqual((Path(result["backup"]) / "gameinfo.gi").read_bytes(), original)
+
+    def test_repairs_previous_installer_without_recopying_packages(self):
+        self.run_mod(apply=True)
+        original = b'GameInfo { FileSystem { SearchPaths { Game citadel/addons Game citadel Game core } } }'
+        (self.game / "gameinfo.gi").write_bytes(original)
+        result = self.run_mod(apply=True, enable_addons=True)
+        self.assertEqual(result["changed"], [])
+        self.assert_base_routes((self.game / "gameinfo.gi").read_bytes())
+        self.assertEqual((Path(result["backup"]) / "gameinfo.gi").read_bytes(), original)
+        again = self.run_mod(apply=True, enable_addons=True)
+        self.assertIsNone(again["backup"])
+
+    def test_broken_enabled_config_requires_repair_flag_for_install(self):
+        original = b'GameInfo { FileSystem { SearchPaths { Game citadel/addons Game citadel Game core } } }'
+        (self.game / "gameinfo.gi").write_bytes(original)
+        with self.assertRaises(RuntimeError): self.run_mod(apply=True)
+        self.assertEqual((self.game / "gameinfo.gi").read_bytes(), original)
+        self.assertFalse((self.addons / "pak06_dir.vpk").exists())
+
+    def test_uninstall_repairs_old_broken_routes(self):
+        self.run_mod(apply=True)
+        original = b'GameInfo { FileSystem { SearchPaths { Game citadel/addons Game citadel Game core } } }'
+        (self.game / "gameinfo.gi").write_bytes(original)
+        result = self.run_mod(apply=True, uninstall=True)
+        self.assertEqual(len(result["changed"]), 5)
+        self.assert_base_routes((self.game / "gameinfo.gi").read_bytes())
+        self.assertEqual((Path(result["backup"]) / "gameinfo.gi").read_bytes(), original)
+
+    def test_comments_do_not_supply_mod_or_write_routes(self):
+        original = (b'GameInfo { FileSystem { SearchPaths { Game citadel/addons\n'
+                    b'// Mod citadel Write citadel Mod core Write core\n'
+                    b'Game citadel Game core } } }')
+        (self.game / "gameinfo.gi").write_bytes(original)
+        self.run_mod(apply=True, enable_addons=True)
+        actual = (self.game / "gameinfo.gi").read_bytes()
+        uncommented = b"\n".join(line for line in actual.splitlines() if not line.lstrip().startswith(b"//"))
+        self.assert_base_routes(uncommented)
+
+    def test_quoted_routes_are_not_duplicated(self):
+        original = (b'GameInfo { FileSystem { SearchPaths { Game citadel/addons '
+                    b'"Mod" "citadel" "Write" "citadel" Game citadel '
+                    b'"Mod" "core" "Write" "core" Game core } } }')
+        (self.game / "gameinfo.gi").write_bytes(original)
+        self.run_mod(apply=True, enable_addons=True)
+        self.assertEqual((self.game / "gameinfo.gi").read_bytes(), original)
+
+    def test_missing_base_game_route_is_refused(self):
+        original = b'GameInfo { FileSystem { SearchPaths { Game citadel/addons } } }'
+        (self.game / "gameinfo.gi").write_bytes(original)
+        with self.assertRaises(RuntimeError): self.run_mod(apply=True, enable_addons=True)
+        self.assertEqual((self.game / "gameinfo.gi").read_bytes(), original)
+
+    def test_documented_mod_resolution_keeps_keybindings_reachable(self):
+        import re
+        cfg = self.game / "cfg" / "user_keys_default.vcfg"
+        cfg.parent.mkdir()
+        cfg.write_bytes(b"default-key-bindings")
+        original = b'GameInfo { FileSystem { SearchPaths { Game citadel Game core } } }'
+        broken = original.replace(b"Game citadel", b"Game citadel/addons Game citadel", 1)
+        def keybinding_file_exists(data):
+            routes = re.findall(rb'\bMod\s+([^\s}]+)', data)
+            if not routes:
+                routes = re.findall(rb'\bGame\s+([^\s}]+)', data)[:1]
+            return any((self.game.parent / route.decode() / "cfg" / "user_keys_default.vcfg").is_file()
+                       for route in routes)
+        self.assertTrue(keybinding_file_exists(original))
+        self.assertFalse(keybinding_file_exists(broken))
+        (self.game / "gameinfo.gi").write_bytes(broken)
+        self.run_mod(apply=True, enable_addons=True)
+        self.assertTrue(keybinding_file_exists((self.game / "gameinfo.gi").read_bytes()))
 
     def test_backup_inside_game_refused(self):
         with self.assertRaises(RuntimeError): self.run_mod(apply=True, backup_dir=self.game / "backup")

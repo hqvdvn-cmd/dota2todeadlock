@@ -98,6 +98,9 @@ def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
                     original_config, flags=re.S)
     matches = list(re.finditer(rb'\bSearchPaths\s*\{', masked))
     enabled = False
+    base = None
+    end = None
+    missing_routes = []
     if len(matches) == 1:
         start = matches[0].end()
         depth, end = 1, None
@@ -111,15 +114,32 @@ def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
             base = re.search(rb'\bGame"?\s+"?citadel"?(?=\s|\})', masked[start:end], re.I)
             if not uninstall and enabled and base and enabled.start() > base.start():
                 raise RuntimeError("Addons follows the base game path. Move its Game line above Game citadel; see README.")
+            # Without explicit MOD/WRITE paths, Source 2 derives them from the
+            # first Game path. With addons first, that hides base keybindings.
+            for kind in (b"Mod", b"Write"):
+                for location in (b"citadel", b"core"):
+                    pattern = rb'\b' + kind + rb'"?\s+"?' + location + rb'"?(?=\s|\})'
+                    if not re.search(pattern, masked[start:end], re.I):
+                        missing_routes.append(kind + b" " + location)
     new_config = original_config
-    if not uninstall and not enabled:
-        if not enable_addons:
-            raise RuntimeError("Addons search path missing. Review README, then add --enable-addons.")
+    if not uninstall:
         if len(matches) != 1 or end is None:
             raise RuntimeError("Ambiguous SearchPaths; configure it manually using README.")
-        end = matches[0].end()
+        if base is None:
+            raise RuntimeError("Base Game citadel route missing; restore a valid gameinfo.gi before installing.")
+        if not enabled and not enable_addons:
+            raise RuntimeError("Addons search path missing. Review README, then add --enable-addons.")
+        if enabled and missing_routes and not enable_addons:
+            raise RuntimeError("Base Mod/Write search paths missing. Run install with --enable-addons to repair them.")
+    # Repair an older incomplete setup on removal too, so leaving the addons
+    # Game path does not leave the keybinding crash behind after uninstalling.
+    if (not uninstall and enable_addons) or (uninstall and enabled and missing_routes):
+        additions = ([b"Game citadel/addons"] if not enabled else []) + missing_routes
+        insertion = matches[0].end()
         newline = b"\r\n" if b"\r\n" in original_config else b"\n"
-        new_config = original_config[:end] + newline + b"            Game citadel/addons" + newline + original_config[end:]
+        if additions:
+            lines = newline.join(b"            " + line for line in additions)
+            new_config = original_config[:insertion] + newline + lines + newline + original_config[insertion:]
 
     backup_base = (Path(backup_dir) if backup_dir else repo / ".local" / "backups").resolve()
     if backup_base.is_relative_to(game.parent.parent):
@@ -188,7 +208,7 @@ def main():
     parser.add_argument("action", choices=["install", "uninstall"])
     parser.add_argument("--game-dir", type=Path, required=True, help="Path ending in Deadlock/game/citadel")
     parser.add_argument("--apply", action="store_true", help="Write changes; default is preview only")
-    parser.add_argument("--enable-addons", action="store_true", help="Insert missing Game citadel/addons search path with backup")
+    parser.add_argument("--enable-addons", action="store_true", help="Enable addons and repair base Mod/Write paths with backup")
     parser.add_argument("--backup-dir", type=Path, help="Backup location outside the game directory")
     args = parser.parse_args()
     try:

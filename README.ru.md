@@ -56,9 +56,13 @@
 python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --enable-addons --apply
 ```
 
-Установщик включит загрузку модов, если нужно, и сохранит конфигурацию перед изменением. Резервные копии находятся в `.local\backups` внутри распакованной папки мода. Сохрани эту папку, затем запусти игру.
+Установщик настроит загрузку модов и сохранит доступ к штатной конфигурации игры. Перед изменением он сделает резервную копию. Копии находятся в `.local\backups` внутри распакованной папки мода. Сохрани эту папку, затем запусти игру.
 
 Если установщик сообщает о занятом или изменённом файле, остановись и проверь другие моды. Не перезаписывай конфликтующий файл.
+
+### Игра выдаёт «Unable to read default keybinding configuration»
+
+Скачай свежий ZIP, закрой игру и мод-менеджер, затем повтори команду установки выше. Установщик исправит конфигурацию загрузки, даже если файлы мода уже стоят. Сбрасывать клавиши или удалять сохранения не нужно.
 
 ## Удаление
 
@@ -73,7 +77,16 @@ python scripts/manage.py uninstall --game-dir "D:\SteamLibrary\steamapps\common\
 <details>
 <summary>Установка вручную</summary>
 
-Сохрани копию `game\citadel\gameinfo.gi`. Скопируй пять файлов из `packages` в `game\citadel\addons`, не заменяя чужие моды. В `gameinfo.gi`, внутри `FileSystem → SearchPaths`, добавь `Game citadel/addons` выше `Game citadel`, если этой строки ещё нет.
+Сохрани копию `game\citadel\gameinfo.gi`. Скопируй пять файлов из `packages` в `game\citadel\addons`, не заменяя чужие моды. В `gameinfo.gi`, внутри `FileSystem → SearchPaths`, размести `Game citadel/addons` выше `Game citadel`. В этом же блоке должны быть четыре строки:
+
+```text
+Mod   citadel
+Write citadel
+Mod   core
+Write core
+```
+
+Сохрани существующие строки `Game citadel`, `Game core`, языковые и остальные настройки. Одной строки addons недостаточно: явные `Mod` и `Write` сохраняют доступ к стандартной конфигурации клавиш.
 
 Для ручного удаления убери только `pak06_dir.vpk` — `pak10_dir.vpk` этого мода, сверив их с [SHA256SUMS.txt](SHA256SUMS.txt). Остальное содержимое `addons` сохрани.
 

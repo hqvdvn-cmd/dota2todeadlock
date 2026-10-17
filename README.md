@@ -56,9 +56,13 @@ The character skin shown in the footage is a separate mod and is not included.
 python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --enable-addons --apply
 ```
 
-The installer enables addon loading if needed and backs up the configuration before changing it. Backups are saved in `.local\backups` inside the extracted mod folder. Keep that folder, then launch the game.
+The installer sets up addon loading and keeps the game's own configuration paths available. It backs up the configuration before changing it. Backups are saved in `.local\backups` inside the extracted mod folder. Keep that folder, then launch the game.
 
 If the installer reports an occupied or modified addon, stop and check your other mods. Do not overwrite the conflicting file.
+
+### Game stops with “Unable to read default keybinding configuration”
+
+Download a fresh ZIP, close the game and mod manager, then run the installation command above again. The installer repairs the loading configuration even if the mod files are already installed. You do not need to reset your keys or delete your saves.
 
 ## Uninstall
 
@@ -73,7 +77,16 @@ This removes this mod’s packages and leaves your other mods in place. Restart 
 <details>
 <summary>Manual installation</summary>
 
-Back up `game\citadel\gameinfo.gi`. Copy the five files from `packages` into `game\citadel\addons` without overwriting another mod. In `gameinfo.gi`, under `FileSystem → SearchPaths`, add `Game citadel/addons` above `Game citadel` if it is missing.
+Back up `game\citadel\gameinfo.gi`. Copy the five files from `packages` into `game\citadel\addons` without overwriting another mod. In `gameinfo.gi`, under `FileSystem → SearchPaths`, put `Game citadel/addons` above `Game citadel`. Also make sure these four entries exist inside the same block:
+
+```text
+Mod   citadel
+Write citadel
+Mod   core
+Write core
+```
+
+Keep the existing `Game citadel`, `Game core`, language and other entries. Do not add just the addons line: the explicit `Mod` and `Write` entries are needed to keep the default keybinding configuration available.
 
 To uninstall manually, remove only this mod’s `pak06_dir.vpk` through `pak10_dir.vpk` after checking them against [SHA256SUMS.txt](SHA256SUMS.txt). Keep the rest of `addons`.
 
