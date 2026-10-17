@@ -1,119 +1,86 @@
-<img src="assets/mod-icon.png" width="96" align="right" alt="Shiva’s Guard">
+**English** · [Русский](README.ru.md)
 
 # Dota 2 → Deadlock
 
-Иконки предметов и эффекты Dota 2 для Deadlock на Windows. В пакете — **84 предмета / 130 текстур**, Counterspell Антимага, Refresher, волна Shiva, красный Frostbite и барьеры Pavise.
+Bring Dota 2 item icons and spell effects into Deadlock.
 
-Магазин и выбор героев остаются штатными. Экспериментальный интерфейс отменён после сообщения о сильных лагах и исключён из публикации. Модели героев и сторонние скины в комплект не входят.
+- **84 item icons**, including red and gold variants for upgraded items.
+- Anti-Mage’s **Counterspell** shield and the green **Refresher** spiral.
+- **Shiva’s Guard** for Cold Front, plus a red Arctic Blast wave and Frostbite.
+- **Pavise** barriers in cyan, gold and red.
 
-[Соответствия предметов](docs/ITEMS.md) · [Хэндoф для агента](docs/AGENT_HANDOFF.md) · [Состав и проверка](docs/VALIDATION.md)
+[Download ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [Item list (RU)](docs/ITEMS.md)
 
-## Демонстрация
+## Preview
 
-[![Видео: барьеры Pavise, Shiva и иконки предметов](assets/demo/poster.jpg)](assets/demo/showcase.mp4)
+[![Watch the mod showcase](assets/demo/poster.jpg)](assets/demo/showcase.mp4)
 
-**[Смотреть ролик — 27 секунд, 1080p](assets/demo/showcase.mp4)** · [Скачать MP4](https://github.com/hqvdvn-cmd/dota2todeadlock/raw/refs/heads/main/assets/demo/showcase.mp4)
+**[Watch the 27-second showcase](assets/demo/showcase.mp4)** · [Download video](https://github.com/hqvdvn-cmd/dota2todeadlock/raw/refs/heads/main/assets/demo/showcase.mp4)
 
-Запись из тренировки: красный барьер Divine Barrier, Arctic Blast с красным Frostbite, Cold Front и золотой/голубой Pavise. В ролике также показаны три страницы иконок. Скин героя установлен отдельно и в комплект мода не входит.
+The character skin shown in the footage is a separate mod and is not included.
 
 <details>
-<summary>Скриншоты: предметы и эффекты</summary>
+<summary>Screenshots: items and effects</summary>
 
-**Иконки предметов — нажми на изображение для полного размера.**
+**Item icons — click an image to view it at full size.**
 
-<a href="assets/demo/items-800-1600.png"><img src="assets/demo/items-800-1600.png" width="32%" alt="Иконки предметов за 800 и 1600 душ"></a>
-<a href="assets/demo/items-3200.png"><img src="assets/demo/items-3200.png" width="32%" alt="Иконки предметов за 3200 душ"></a>
-<a href="assets/demo/items-6400.png"><img src="assets/demo/items-6400.png" width="32%" alt="Иконки предметов за 6400 душ"></a>
+<a href="assets/demo/items-800-1600.png"><img src="assets/demo/items-800-1600.png" width="32%" alt="Item icons: 800 and 1,600 souls"></a>
+<a href="assets/demo/items-3200.png"><img src="assets/demo/items-3200.png" width="32%" alt="Item icons: 3,200 souls"></a>
+<a href="assets/demo/items-6400.png"><img src="assets/demo/items-6400.png" width="32%" alt="Item icons: 6,400 souls"></a>
 
-**Pavise: голубой, золотой и красный варианты.**
+**Pavise: cyan, gold and red variants.**
 
-<a href="assets/demo/pavise-cyan.png"><img src="assets/demo/pavise-cyan.png" width="32%" alt="Голубой барьер Pavise"></a>
-<a href="assets/demo/pavise-gold.png"><img src="assets/demo/pavise-gold.png" width="32%" alt="Золотой барьер Pavise"></a>
-<a href="assets/demo/pavise-red.png"><img src="assets/demo/pavise-red.png" width="32%" alt="Красный барьер Pavise на герое и союзнике"></a>
+<a href="assets/demo/pavise-cyan.png"><img src="assets/demo/pavise-cyan.png" width="32%" alt="Cyan Pavise barrier"></a>
+<a href="assets/demo/pavise-gold.png"><img src="assets/demo/pavise-gold.png" width="32%" alt="Gold Pavise barrier"></a>
+<a href="assets/demo/pavise-red.png"><img src="assets/demo/pavise-red.png" width="32%" alt="Red Pavise barrier on the player and an ally"></a>
 
 **Cold Front / Shiva.**
 
-![Волна Shiva в Deadlock](assets/demo/cold-front.png)
+![Shiva wave in Deadlock](assets/demo/cold-front.png)
 
 </details>
 
-## Что нужно
+## Requirements
 
-- Установленный Deadlock в Steam на Windows.
-- Python **3.10 или новее** с командой `python` и штатный Windows PowerShell. Библиотеки через `pip` не нужны.
-- Закрытые Deadlock и мод-менеджер, включая его значок в трее.
-- Право записи в папку игры. Запускай от обычного пользователя, если доступ уже есть.
+- Deadlock installed through Steam on Windows.
+- [Python 3.10 or newer](https://www.python.org/downloads/windows/) for the installer.
 
-Для готовых VPK не нужны установленная Dota 2, .NET SDK, Source 2 Viewer или мод-менеджер. Ресурсы уже упакованы.
+## Install
 
-## Установка
-
-1. Скачай [ZIP репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) через **Code → Download ZIP** и распакуй вне папки игры. Либо клонируй репозиторий.
-2. В Steam открой **Deadlock → Свойства → Установленные файлы → Обзор**. Нужна подпапка `game\citadel`, где находятся `gameinfo.gi` и основной `pak01_dir.vpk`.
-3. Открой PowerShell в распакованной папке мода. В командах ниже замени пример пути на свой.
-
-Сначала проверка без изменений:
+1. [Download the ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) and extract it outside the game folder.
+2. Close Deadlock and your mod manager, including its tray icon.
+3. In Steam, open **Deadlock → Properties → Installed Files → Browse**. Open `game\citadel` inside that folder and copy its path.
+4. Open PowerShell in the extracted mod folder and run the command below. **Replace the example game path with your own.**
 
 ```powershell
-python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel"
-```
-
-Затем установка:
-
-```powershell
-python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --apply
-```
-
-Если проверка сообщает **Addons search path missing**, повтори проверку и установку с `--enable-addons`. Этот флаг добавляет строку `Game citadel/addons` в `SearchPaths` файла `gameinfo.gi`, предварительно сохранив оригинал:
-
-```powershell
-python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --enable-addons
 python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --enable-addons --apply
 ```
 
-Скрипт проверяет SHA-256 каждого пакета и занимает только `addons\pak06_dir.vpk` — `pak10_dir.vpk`. Если в одном из этих мест лежит другой мод или изменённый файл, установка остановится **до записи пакетов**. Одинаковые файлы пропускаются. Чужие VPK и `.dmm.json` сохраняются. При ошибке во время копирования скрипт пытается убрать уже добавленные им пакеты.
+The installer enables addon loading if needed and backs up the configuration before changing it. Backups are saved in `.local\backups` inside the extracted mod folder. Keep that folder, then launch the game.
 
-Путь резервной копии выводится в поле `backup`; по умолчанию это `.local\backups` внутри распакованного мода, вне игры. Там же сохраняется `receipt.json`. Не удаляй эту папку до завершения проверки. Другое место можно задать через `--backup-dir "D:\ModBackups"`.
+If the installer reports an occupied or modified addon, stop and check your other mods. Do not overwrite the conflicting file.
 
-После установки запусти тренировку. Проверь иконки в магазине и инвентаре, затем Counterspell, Refresher, Cold Front и Arctic Blast по боту. Перезапуск игры обязателен для загрузки заменённых ресурсов.
+## Uninstall
 
-## Откат к обычным иконкам и эффектам
-
-Закрой игру и менеджер. Из той же папки мода выполни предварительную проверку, затем удаление:
+Close the game and mod manager. From the same mod folder, run:
 
 ```powershell
-python scripts/manage.py uninstall --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel"
 python scripts/manage.py uninstall --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --apply
 ```
 
-Будут убраны только пять пакетов с хешами из `manifest.json`; перед удалением они копируются в резервную папку. Если файл отличается, скрипт откажется удалять его. Остальные моды остаются. Пустую папку `addons` и путь её загрузки скрипт сохраняет: ими могут пользоваться другие моды.
+This removes this mod’s packages and leaves your other mods in place. Restart the game to return to the original item icons and effects.
 
-Для повторной установки используй команду `install`. Если нужно вернуть исходный `gameinfo.gi`, сначала сравни его с копией из нужной операции: полная замена старым файлом может стереть последующие настройки или отключить другие моды. Для удаления этого мода такая замена не требуется.
+<details>
+<summary>Manual installation</summary>
 
-## Установка вручную
+Back up `game\citadel\gameinfo.gi`. Copy the five files from `packages` into `game\citadel\addons` without overwriting another mod. In `gameinfo.gi`, under `FileSystem → SearchPaths`, add `Game citadel/addons` above `Game citadel` if it is missing.
 
-При закрытых игре и менеджере сравни файлы из `packages` с [SHA256SUMS.txt](SHA256SUMS.txt), затем скопируй их в `Deadlock\game\citadel\addons`. Не заменяй занятые другим модом имена. В `gameinfo.gi`, внутри `FileSystem → SearchPaths`, строка `Game citadel/addons` должна находиться **выше** `Game citadel`. Меняй только эту строку и сохраняй резервную копию конфигурации.
+To uninstall manually, remove only this mod’s `pak06_dir.vpk` through `pak10_dir.vpk` after checking them against [SHA256SUMS.txt](SHA256SUMS.txt). Keep the rest of `addons`.
 
-Для ручного отката вынеси эти же пять файлов из игры, сверив хеши. Не удаляй папку `addons` целиком. Если слоты заняты, перед установкой нужно разобраться в существующих пакетах; универсального безопасного перенумерования здесь нет.
+</details>
 
-## Совместимость и статус
+## Compatibility
 
-Пакет собран **17 октября 2026** по тогдашним ресурсам игры. Counterspell, Refresher, Shiva/Frostbite и оболочка Pavise проверялись владельцем в тренировке. Полный набор срабатываний Reactive Barrier, Indomitable и Weapon Shielding не проверен. Последняя смена Restorative Shot на Chaos Strike прошла файловую проверку; отдельного подтверждения в игре пока нет.
+Made for the **October 17, 2026** game build. Game updates may break the mod; if problems appear after an update, uninstall it until an updated version is available. A mod manager may also replace manually installed files when it syncs.
 
-`pak09` содержит в том числе модифицированные определения с визуальными привязками барьеров. После обновления Deadlock они могут устареть: убери `pak09` и `pak10` до проверки по новой базе, а при общей неисправности выполни полный откат. Установка скриптом проверяет состав файлов, а не совместимость с новым патчем игры.
-
-Мод-менеджер может пересоздать `addons` при синхронизации. Эти пять пакетов не регистрируются отдельными карточками менеджера. После его операций сверяй файлы повторно.
-
-## Для агента и разработчика
-
-Начни с [docs/AGENT_HANDOFF.md](docs/AGENT_HANDOFF.md). Там перечислены пакеты, границы изменений, установка, откат и проверки. Проверки управляющего скрипта запускаются так:
-
-```powershell
-python -m unittest discover -s tests -v
-```
-
-Готовые игровые ресурсы находятся в `packages`; таблица соответствий — в `docs/item-mapping.json`. Репозиторий не содержит локальные SDK, полные игровые архивы, историю неудачных пробников и инструменты для пересборки эффектов. Это дистрибутив с исходником управляющего скрипта.
-
-## Ресурсы
-
-Изображения и эффекты взяты из Dota 2 и Deadlock. Игровые ресурсы и названия принадлежат Valve. Это неофициальный мод. Перекраски и составные иконки выполнены программно из оригиналов. Подробнее: [CREDITS.md](CREDITS.md).
+Unofficial fan mod using Dota 2 and Deadlock assets by Valve. [Credits](CREDITS.md).
