@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "items": [
     {
       "deadlock_id": "upgrade_ability_refresher",
@@ -1251,10 +1251,10 @@
       "deadlock_id": "upgrade_inhibitor",
       "deadlock_name": "Inhibitor",
       "dota_id": "skadi",
-      "dota_name": "Eye of Skadi",
+      "dota_name": "Eye of Skadi + Mage Slayer",
       "include": true,
-      "shared_function": "Ослабление противника попаданиями",
-      "differences": "Inhibitor снижает урон цели; Skadi замедляет и снижает восстановление здоровья.",
+      "shared_function": "Попадания ослабляют исходящий урон и лечение противника",
+      "differences": "Skadi + Mage Slayer: Inhibitor снижает весь исходящий урон после накопления; Mage Slayer снижает урон заклинаний, Skadi снижает восстановление здоровья.",
       "source_texture": "panorama/images/items/skadi_png.vtex_c",
       "target_textures": [
         "panorama/images/items/vitality/inhibitor_psd.vtex_c",
@@ -1576,6 +1576,45 @@
       ],
       "tier": 1,
       "skipped_shared_textures": []
+    },
+    {
+      "deadlock_id": "upgrade_proc_silence",
+      "deadlock_name": "Silencer",
+      "dota_id": "mage_slayer",
+      "dota_name": "Mage Slayer + Mind Breaker",
+      "include": true,
+      "shared_function": "Пули снижают исходящий урон духом и накапливают безмолвие",
+      "differences": "Mage Slayer + Mind Breaker: в Deadlock безмолвие требует накопления и даёт временный иммунитет к повторному накоплению.",
+      "source_texture": "panorama/images/items/mage_slayer_png.vtex_c",
+      "target_textures": [
+        "panorama/images/items/weapon/silencer_psd.vtex_c",
+        "panorama/images/upgrades/mods_weapon/emp_bullets_psd.vtex_c"
+      ],
+      "tier": 4,
+      "skipped_shared_textures": []
+    },
+    {
+      "deadlock_id": "upgrade_eldritch_shot",
+      "deadlock_name": "Haunting Shot",
+      "dota_id": "mage_slayer",
+      "dota_name": "Mage Slayer",
+      "include": true,
+      "shared_function": "Попадание снижает исходящий урон противника",
+      "differences": "Haunting Shot доступен в Brawl: также снижает лечение, замедляет и наносит урон от текущего здоровья. Mage Slayer передаёт только снижение урона заклинаний.",
+      "source_texture": "panorama/images/items/mage_slayer_png.vtex_c",
+      "target_textures": [
+        "panorama/images/items/brawl/eldritch_shot_psd.vtex_c"
+      ],
+      "tier": 5,
+      "skipped_shared_textures": [
+        {
+          "path": "panorama/images/upgrades/mods_weapon/explosive_bullets_psd.vtex_c",
+          "item_ids": [
+            "upgrade_crackshot",
+            "upgrade_eldritch_shot"
+          ]
+        }
+      ]
     }
   ]
 }

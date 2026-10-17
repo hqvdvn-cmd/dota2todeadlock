@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.17",
+  "version": "2026.10.18",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
-      "description": "84 items; 130 textures",
-      "revision": "v10",
-      "bytes": 2005861,
-      "sha256": "b8016afe874ae0fc47c55fb6661afac9ac5b75b6ba15bcf50de2b257ada33e52"
+      "description": "86 items; 133 textures",
+      "revision": "v11",
+      "bytes": 2156618,
+      "sha256": "e3c24ee2ddbd4764a8ad1fc7c66a62d0654f35dd6f2fb637802a0731fdd35c19"
     },
     {
       "file": "pak07_dir.vpk",

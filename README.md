@@ -4,7 +4,7 @@
 
 Bring Dota 2 item icons and spell effects into Deadlock.
 
-- **84 item icons**, including red and gold variants for upgraded items.
+- **86 item icons**, including red and gold variants for upgraded items.
 - Anti-Mage’s **Counterspell** shield and the green **Refresher** spiral.
 - **Shiva’s Guard** for Cold Front, plus a red Arctic Blast wave and Frostbite.
 - **Pavise** barriers in cyan, gold and red.
@@ -56,13 +56,29 @@ The character skin shown in the footage is a separate mod and is not included.
 python scripts/manage.py install --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --enable-addons --apply
 ```
 
-The installer sets up addon loading and keeps the game's own configuration paths available. It backs up the configuration before changing it. Backups are saved in `.local\backups` inside the extracted mod folder. Keep that folder, then launch the game.
+The installer sets up addon loading and keeps the game's own configuration paths available. It backs up the configuration before changing it. Backups are saved in `.local\backups` inside the extracted mod folder. Keep that folder.
 
 If the installer reports an occupied or modified addon, stop and check your other mods. Do not overwrite the conflicting file.
 
+## Launch with mods
+
+Wait for any Steam game update to finish, then run this from the mod folder with the game and mod manager closed. Replace the game path with your own:
+
+```powershell
+python scripts/manage.py launch --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --apply
+```
+
+This restores addon loading if `gameinfo.gi` was reset, backs up any configuration change, and asks Steam to launch Deadlock. It does not run Steam's file verification. Use this command each time you play with mods; a separate mod manager is optional. It leaves your VPKs in place and refuses to launch if this distribution is missing or modified.
+
+If Steam starts an update after the command, let it finish, close the game if it opened, and run the command again. Restoring addon loading does not make an outdated mod compatible with a new game build.
+
+### Updating the mod
+
+Before replacing your mod folder, close the game and uninstall using the command in your **old copy** below. Extract the new ZIP to a separate folder, then install from that folder. Keep your backups. A new copy refuses to overwrite packages from an older release.
+
 ### Game stops with “Unable to read default keybinding configuration”
 
-Download a fresh ZIP, close the game and mod manager, then run the installation command above again. The installer repairs the loading configuration even if the mod files are already installed. You do not need to reset your keys or delete your saves.
+Update the mod as described above, then use the launch command. It also repairs the loading configuration when the current mod files are already installed. You do not need to reset your keys or delete your saves.
 
 ## Uninstall
 

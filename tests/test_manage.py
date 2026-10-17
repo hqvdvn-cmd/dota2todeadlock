@@ -221,4 +221,66 @@ class InstallTests(unittest.TestCase):
         (self.repo / "manifest.json").write_text(json.dumps(data))
         with self.assertRaises(RuntimeError): self.run_mod(apply=True)
 
+    def launch(self, **kwargs):
+        return m.launch(self.game, repo=self.repo, **kwargs)
+
+    def test_launch_repairs_reset_config_before_opening_steam(self):
+        self.run_mod(apply=True)
+        stock = b'GameInfo { FileSystem { SearchPaths { Game citadel Game core } } }'
+        (self.game / "gameinfo.gi").write_bytes(stock)
+        vpks = {p.name: p.read_bytes() for p in self.addons.glob("*.vpk")}
+        def open_steam(uri):
+            self.assertEqual(uri, "steam://run/1422450")
+            repaired = (self.game / "gameinfo.gi").read_bytes()
+            for route in (b"Game citadel/addons", b"Mod citadel", b"Write citadel", b"Mod core", b"Write core"):
+                self.assertIn(route, repaired)
+        with patch.object(m.os, "startfile", side_effect=open_steam, create=True) as opened:
+            result = self.launch(apply=True)
+        opened.assert_called_once()
+        self.assertEqual(result["launch"], "requested via Steam; startup not confirmed")
+        self.assertEqual((Path(result["backup"]) / "gameinfo.gi").read_bytes(), stock)
+        self.assertEqual(vpks, {p.name: p.read_bytes() for p in self.addons.glob("*.vpk")})
+
+    def test_launch_preview_neither_repairs_nor_starts(self):
+        self.run_mod(apply=True)
+        stock = b'GameInfo { FileSystem { SearchPaths { Game citadel Game core } } }'
+        (self.game / "gameinfo.gi").write_bytes(stock)
+        before = sorted(str(p.relative_to(self.root)) for p in self.root.rglob("*"))
+        with patch.object(m.os, "startfile", create=True) as opened:
+            result = self.launch()
+        opened.assert_not_called()
+        self.assertEqual(result["launch"], "preview only")
+        self.assertEqual((self.game / "gameinfo.gi").read_bytes(), stock)
+        self.assertEqual(before, sorted(str(p.relative_to(self.root)) for p in self.root.rglob("*")))
+
+    def test_launch_does_not_reinstall_removed_or_missing_mod(self):
+        with patch.object(m.os, "startfile", create=True) as opened:
+            with self.assertRaisesRegex(RuntimeError, "not installed"):
+                self.launch(apply=True)
+        opened.assert_not_called()
+        self.assertFalse((self.addons / "pak06_dir.vpk").exists())
+
+    def test_launch_refuses_changed_package_without_starting(self):
+        self.run_mod(apply=True)
+        (self.addons / "pak10_dir.vpk").write_bytes(b"different mod")
+        with patch.object(m.os, "startfile", create=True) as opened:
+            with self.assertRaises(RuntimeError): self.launch(apply=True)
+        opened.assert_not_called()
+
+    def test_launch_refuses_running_game_before_repair(self):
+        self.run_mod(apply=True)
+        with patch.object(m, "require_closed", side_effect=RuntimeError("busy")):
+            with patch.object(m.os, "startfile", create=True) as opened:
+                with self.assertRaisesRegex(RuntimeError, "busy"): self.launch(apply=True)
+        opened.assert_not_called()
+
+    def test_launch_repeated_without_reset_creates_no_extra_backup(self):
+        self.run_mod(apply=True)
+        backups = sorted(p.name for p in (self.repo / ".local" / "backups").iterdir())
+        with patch.object(m.os, "startfile", create=True) as opened:
+            result = self.launch(apply=True)
+        opened.assert_called_once_with("steam://run/1422450")
+        self.assertIsNone(result["backup"])
+        self.assertEqual(backups, sorted(p.name for p in (self.repo / ".local" / "backups").iterdir()))
+
 if __name__ == "__main__": unittest.main()

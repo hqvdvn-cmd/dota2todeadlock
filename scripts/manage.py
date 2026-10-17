@@ -1,4 +1,4 @@
-"""Install or remove this exact mod distribution. Standard library, Windows only."""
+"""Install, remove, or launch this mod distribution. Standard library, Windows only."""
 import argparse
 import hashlib
 import json
@@ -53,7 +53,7 @@ def copy_exclusive(source, dest, digest):
 
 
 def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
-        repo=ROOT, backup_dir=None):
+        repo=ROOT, backup_dir=None, installed_only=False):
     require_closed()
     game = Path(game_dir).resolve(strict=True)
     repo = Path(repo).resolve(strict=True)
@@ -85,6 +85,8 @@ def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
             raise RuntimeError("Distribution checksum mismatch: " + name)
         if dest.is_symlink() or dest.resolve().parent != addons.resolve():
             raise RuntimeError("Unexpected destination path: " + name)
+        if installed_only and not dest.is_file():
+            raise RuntimeError("Mod is not installed completely. Run install first: " + name)
         if dest.exists() and sha(dest) != digest:
             raise RuntimeError("Occupied or modified addon; refusing to change: " + name)
         if (uninstall and dest.exists()) or (not uninstall and not dest.exists()):
@@ -203,17 +205,33 @@ def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
     return result
 
 
+def launch(game_dir, *, apply=False, repo=ROOT, backup_dir=None):
+    """Reapply addon paths before asking Steam to start an already installed mod."""
+    result = run(game_dir, apply=apply, enable_addons=True,
+                 installed_only=True, repo=repo, backup_dir=backup_dir)
+    result["action"] = "launch"
+    result["launch"] = "preview only"
+    if apply:
+        require_closed()
+        os.startfile("steam://run/1422450")
+        result["launch"] = "requested via Steam; startup not confirmed"
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["install", "uninstall"])
+    parser.add_argument("action", choices=["install", "uninstall", "launch"])
     parser.add_argument("--game-dir", type=Path, required=True, help="Path ending in Deadlock/game/citadel")
     parser.add_argument("--apply", action="store_true", help="Write changes; default is preview only")
     parser.add_argument("--enable-addons", action="store_true", help="Enable addons and repair base Mod/Write paths with backup")
     parser.add_argument("--backup-dir", type=Path, help="Backup location outside the game directory")
     args = parser.parse_args()
     try:
-        result = run(args.game_dir, apply=args.apply, uninstall=args.action == "uninstall",
-                     enable_addons=args.enable_addons, backup_dir=args.backup_dir)
+        if args.action == "launch":
+            result = launch(args.game_dir, apply=args.apply, backup_dir=args.backup_dir)
+        else:
+            result = run(args.game_dir, apply=args.apply, uninstall=args.action == "uninstall",
+                         enable_addons=args.enable_addons, backup_dir=args.backup_dir)
     except (OSError, RuntimeError, ValueError, KeyError, subprocess.SubprocessError) as exc:
         parser.exit(1, "Refused: " + str(exc) + "\n")
     print(json.dumps(result, indent=2))

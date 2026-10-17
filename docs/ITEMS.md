@@ -69,7 +69,7 @@
 | Indomitable | Pavise + Linken's Sphere + Octarine Core | Красный Pavise + Linken's Sphere + Octarine; автоматическое снятие контроля не тождественно блоку направленного заклинания. |
 | Weapon Shielding | Pavise | Weapon Shielding срабатывает от значительного урона оружием; Pavise активно применяется на союзника. |
 | Bullet Resilience | Platemail | Сопротивление пулям Deadlock и физическая броня Dota рассчитываются по-разному. |
-| Inhibitor | Eye of Skadi | Inhibitor снижает урон цели; Skadi замедляет и снижает восстановление здоровья. |
+| Inhibitor | Eye of Skadi + Mage Slayer | Skadi + Mage Slayer: Inhibitor снижает весь исходящий урон после накопления; Mage Slayer снижает урон заклинаний, Skadi снижает восстановление здоровья. |
 | Crippling Headshot | Desolator + Eye of Skadi | Двойная Desolator + Skadi; в Deadlock требуется попадание в голову. |
 | Ricochet | Split Shot | Ricochet рикошетит от цели и переносит bullet procs; базовый Split Shot выпускает дополнительные стрелы без обычных эффектов атак. |
 | Capacitor | Mjollnir | Конкретные условия накопления и срабатывания Capacitor отличаются от Mjollnir. |
@@ -88,3 +88,5 @@
 | Lifestrike | Feast | Красная Feast: вторая ступень после Melee Lifesteal, реальный тир 3; Lifestrike также замедляет и имеет перезарядку. |
 | Restorative Shot | Chaos Strike | Chaos Strike выбран владельцем, чтобы отличать Restorative Shot от Melee Lifesteal; у Chaos Strike есть крит и вампиризм, у Restorative Shot — фиксированное лечение с перезарядкой. |
 | Spirit Strike | Essence Shift | Обычная Essence Shift по выбору владельца; Spirit Strike снижает Spirit Resist, пассивная способность Сларка крадёт атрибуты. |
+| Silencer | Mage Slayer + Mind Breaker | Mage Slayer + Mind Breaker: в Deadlock безмолвие требует накопления и даёт временный иммунитет к повторному накоплению. |
+| Haunting Shot | Mage Slayer | Haunting Shot доступен в Brawl: также снижает лечение, замедляет и наносит урон от текущего здоровья. Mage Slayer передаёт только снижение урона заклинаний. |
