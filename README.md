@@ -8,6 +8,35 @@
 
 [Соответствия предметов](docs/ITEMS.md) · [Хэндoф для агента](docs/AGENT_HANDOFF.md) · [Состав и проверка](docs/VALIDATION.md)
 
+## Демонстрация
+
+[![Видео: барьеры Pavise, Shiva и иконки предметов](assets/demo/poster.jpg)](assets/demo/showcase.mp4)
+
+**[Смотреть ролик — 27 секунд, 1080p](assets/demo/showcase.mp4)** · [Скачать MP4](https://github.com/hqvdvn-cmd/dota2todeadlock/raw/refs/heads/main/assets/demo/showcase.mp4)
+
+Запись из тренировки: красный барьер Divine Barrier, Arctic Blast с красным Frostbite, Cold Front и золотой/голубой Pavise. В ролике также показаны три страницы иконок. Скин героя установлен отдельно и в комплект мода не входит.
+
+<details>
+<summary>Скриншоты: предметы и эффекты</summary>
+
+**Иконки предметов — нажми на изображение для полного размера.**
+
+<a href="assets/demo/items-800-1600.png"><img src="assets/demo/items-800-1600.png" width="32%" alt="Иконки предметов за 800 и 1600 душ"></a>
+<a href="assets/demo/items-3200.png"><img src="assets/demo/items-3200.png" width="32%" alt="Иконки предметов за 3200 душ"></a>
+<a href="assets/demo/items-6400.png"><img src="assets/demo/items-6400.png" width="32%" alt="Иконки предметов за 6400 душ"></a>
+
+**Pavise: голубой, золотой и красный варианты.**
+
+<a href="assets/demo/pavise-cyan.png"><img src="assets/demo/pavise-cyan.png" width="32%" alt="Голубой барьер Pavise"></a>
+<a href="assets/demo/pavise-gold.png"><img src="assets/demo/pavise-gold.png" width="32%" alt="Золотой барьер Pavise"></a>
+<a href="assets/demo/pavise-red.png"><img src="assets/demo/pavise-red.png" width="32%" alt="Красный барьер Pavise на герое и союзнике"></a>
+
+**Cold Front / Shiva.**
+
+![Волна Shiva в Deadlock](assets/demo/cold-front.png)
+
+</details>
+
 ## Что нужно
 
 - Установленный Deadlock в Steam на Windows.
