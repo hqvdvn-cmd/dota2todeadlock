@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.18-v12",
+  "version": "2026.10.21-v14",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
-      "description": "86 items; 133 textures",
-      "revision": "v12",
-      "bytes": 2291560,
-      "sha256": "d19d23e1c5f5118e14a5e6c2dbd855bf33354083d233e26defdc099ff2ce9744"
+      "description": "160 named item definitions; 241 textures; 13 native definitions retained",
+      "revision": "v14 full approved table",
+      "bytes": 8391545,
+      "sha256": "1bf05ffc91855d2eaa63da8ff88e4b2238d661e1a7f573aa1919e1c7c2fc097c"
     },
     {
       "file": "pak07_dir.vpk",
@@ -31,30 +31,33 @@
       "file": "pak09_dir.vpk",
       "component": "Shiva and barrier bindings",
       "description": "Cold Front wave, red Arctic Blast/Frostbite and passive barrier visual bindings",
-      "revision": "accepted frostbite projection fix + bindings v2",
-      "bytes": 6234185,
-      "sha256": "03d26c54f8936b59c48209552e3cb5748e0a5cd632dffc722d68d963f6542636"
+      "revision": "seven visual deltas rebased on native build 26090082/26091806",
+      "bytes": 5876614,
+      "sha256": "7cee2aeeaf6d53fde1062b5a0b8af6038fd0e4f5bb3ffa840ff3580f3a40d1d9"
     },
     {
       "file": "pak10_dir.vpk",
       "component": "Pavise barriers",
-      "description": "Cyan, gold and red transparent shells",
-      "revision": "v4",
-      "bytes": 1203416,
-      "sha256": "ca48f7c6a0e556379869950d758c6e6acb8ac386efc8e0aaea201c286d53101c"
+      "description": "Pavise shells and shared barrier start, impact and break effects",
+      "revision": "v5",
+      "bytes": 1223534,
+      "sha256": "b35e775f52e12a101780bad4af54316cc78b1192505b55113d35415f045be69e"
     }
   ],
   "notes": [
-    "Stock shop and hero selection. No hero model replacements.",
-    "Shiva/barrier packages include compiled resource overrides tied to the tested game snapshot. Revalidate after game updates."
+    "Stock shop and hero selection. No hero model or voice replacements.",
+    "160 selected named definitions include upgrades and mode-specific items; this is not a live shop count.",
+    "Native ability resource checked before install and scripted launch. This check does not cover all game resources.",
+    "Shared barrier start, impact and break resources affect barriers from items and hero abilities.",
+    "Owner reported normal behavior in the combined local setup after this update. Clean Dota-only match acceptance and exact prior crash cause remain unverified."
   ],
-  "source_steam_build_id": "25999968",
+  "source_steam_build_id": "26091806",
   "compatibility_checks": {
     "scripts/abilities.vdata_c": {
-      "sha256": "2678976dfef4fec75a310effe454033574e16a407befa468d81ef3511c6680d0",
+      "sha256": "bdb27bcc6ae29471ec942a3f23c84d14a913021896bb5bc3c5bf21f8031c8f8c",
       "matched_stock_build_ids": [
-        "25999968",
-        "26015805"
+        "26090082",
+        "26091806"
       ],
       "scope": "Stock ability resource equality only; not full runtime acceptance."
     }

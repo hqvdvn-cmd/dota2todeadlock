@@ -4,14 +4,20 @@
 
 Bring Dota 2 item icons and spell effects into Deadlock.
 
-- **86 item icons**, including red and gold variants for upgraded items.
+- **160 item definitions** use Dota icons selected by their gameplay purpose, including 25 composite icons and a black Sharpshooter. Another 13 keep their original icons.
 - Anti-Mage’s **Counterspell** shield and the green **Refresher** spiral.
 - **Shiva’s Guard** for Cold Front, plus a red Arctic Blast wave and Frostbite.
-- **Pavise** barriers in cyan, gold and red.
+- **Pavise** barriers in cyan, gold and red, with shared appearance, hit and break effects.
 
 [Download ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [Item list (RU)](docs/ITEMS.md)
 
 ## Preview
+
+![The 160 selected icons in v14](assets/demo/icons-v14.png)
+
+[Composite icons at full size](assets/demo/composites-v14.png). The list includes upgrades and mode-specific definitions; it is not a count of items in the current shop. Some shared legacy HUD textures keep their native image to avoid conflicting replacements.
+
+The video and in-game screenshots below show the earlier v12 release.
 
 [![Watch the mod showcase](assets/demo/poster.jpg)](assets/demo/showcase.mp4)
 
@@ -68,7 +74,7 @@ Wait for any Steam game update to finish, then run this from the mod folder with
 python scripts/manage.py launch --game-dir "D:\SteamLibrary\steamapps\common\Deadlock\game\citadel" --apply
 ```
 
-This restores addon loading if `gameinfo.gi` was reset, backs up any configuration change, and asks Steam to launch Deadlock. It does not run Steam's file verification. Use this command each time you play with mods; a separate mod manager is optional. It leaves your VPKs in place and refuses to launch if this distribution is missing or modified.
+This checks the game's native ability resource, restores addon loading if `gameinfo.gi` was reset, backs up any configuration change, and asks Steam to launch Deadlock. It refuses a changed ability resource or missing/modified mod package. It does not run Steam's file verification. Use this command each time you play with mods; a separate mod manager is optional.
 
 If Steam starts an update after the command, let it finish, close the game if it opened, and run the command again. Restoring addon loading does not make an outdated mod compatible with a new game build.
 
@@ -110,6 +116,8 @@ To uninstall manually, remove only this mod’s `pak06_dir.vpk` through `pak10_d
 
 ## Compatibility
 
-Made for the **October 17, 2026** game build. Game updates may break the mod; if problems appear after an update, uninstall it until an updated version is available. A mod manager may also replace manually installed files when it syncs.
+Rebased on the **October 21, 2026** ability resource, identical in builds **26090082** and **26091806**. Installation and scripted launch check that native resource directly. A matching hash covers this resource only; future updates can affect other assets. Manual installation and mod managers do not run this check.
+
+The owner reported normal behavior after a local game check with this update installed. This was a combined local setup with separate hero mods, not a clean Dota-only match test. The reported earlier match crash has not been traced to a specific package. Shared barrier effects also apply to barriers granted by hero abilities.
 
 Unofficial fan mod using Dota 2 and Deadlock assets by Valve. [Credits](CREDITS.md).

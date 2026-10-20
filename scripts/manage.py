@@ -6,8 +6,10 @@ import os
 from pathlib import Path
 import re
 import shutil
+import struct
 import subprocess
 import tempfile
+import zlib
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,6 +54,68 @@ def copy_exclusive(source, dest, digest):
         temporary.unlink(missing_ok=True)
 
 
+def check_native_abilities(game, manifest):
+    """Read the stock VPK directly; addon search paths cannot shadow this check."""
+    expected = manifest.get("compatibility_checks", {}).get("scripts/abilities.vdata_c", {}).get("sha256")
+    if expected is None:
+        return None
+    if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-fA-F]{64}", expected):
+        raise RuntimeError("Invalid native abilities checksum in manifest")
+    try:
+        directory = game / "pak01_dir.vpk"
+        if directory.is_symlink():
+            raise ValueError("Stock VPK is a symlink")
+        with directory.open("rb") as stream:
+            signature, version, tree_size = struct.unpack("<III", stream.read(12))
+            if signature != 0x55AA1234 or version not in (1, 2) or tree_size > 64 * 1024 * 1024:
+                raise ValueError("Unsupported stock VPK header")
+            header_size = 12 if version == 1 else 28
+            stream.seek(header_size)
+            tree = stream.read(tree_size)
+        if len(tree) != tree_size:
+            raise ValueError("Truncated stock VPK tree")
+        cursor = 0
+        def string():
+            nonlocal cursor
+            end = tree.index(b"\0", cursor)
+            value = tree[cursor:end].decode("utf-8")
+            cursor = end + 1
+            return value
+        found = None
+        while extension := string():
+            while folder := string():
+                while name := string():
+                    crc, preload_size, archive, offset, length, end = struct.unpack_from("<IHHIIH", tree, cursor)
+                    cursor += 18
+                    preload = tree[cursor:cursor + preload_size]
+                    cursor += preload_size
+                    if end != 0xFFFF or len(preload) != preload_size:
+                        raise ValueError("Invalid stock VPK entry")
+                    if (extension, folder, name) == ("vdata_c", "scripts", "abilities"):
+                        if found is not None:
+                            raise ValueError("Duplicate native abilities resource")
+                        found = (crc, preload, archive, offset, length)
+        if cursor != len(tree) or found is None:
+            raise ValueError("Native abilities resource not found")
+        crc, preload, archive, offset, length = found
+        if length > 64 * 1024 * 1024:
+            raise ValueError("Unexpected native abilities size")
+        payload_file = directory if archive == 0x7FFF else game / f"pak01_{archive:03d}.vpk"
+        if payload_file.is_symlink():
+            raise ValueError("Stock payload is a symlink")
+        with payload_file.open("rb") as stream:
+            stream.seek(offset + (header_size + tree_size if archive == 0x7FFF else 0))
+            data = preload + stream.read(length)
+        if len(data) != len(preload) + length or zlib.crc32(data) & 0xFFFFFFFF != crc:
+            raise ValueError("Native abilities CRC or size mismatch")
+        actual = hashlib.sha256(data).hexdigest()
+    except (OSError, ValueError, struct.error) as exc:
+        raise RuntimeError("Cannot verify native scripts/abilities.vdata_c: " + str(exc)) from exc
+    if actual != expected.lower():
+        raise RuntimeError("Native scripts/abilities.vdata_c changed after a game update. This mod needs a compatible rebuild before install/launch.")
+    return {"resource": "scripts/abilities.vdata_c", "sha256": actual, "status": "matches reference; runtime not tested"}
+
+
 def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
         repo=ROOT, backup_dir=None, installed_only=False):
     require_closed()
@@ -68,6 +132,7 @@ def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
     if addons.exists() and not addons.is_dir():
         raise RuntimeError("addons is not a directory")
     manifest = json.loads((repo / "manifest.json").read_text(encoding="utf-8"))
+    compatibility = None if uninstall else check_native_abilities(game, manifest)
     packages = manifest["packages"]
     names = [p["file"] for p in packages]
     expected = {f"pak{i:02}_dir.vpk" for i in range(6, 11)}
@@ -153,6 +218,7 @@ def run(game_dir, *, apply=False, uninstall=False, enable_addons=False,
     result = {"mode": "apply" if apply else "dry-run", "action": "uninstall" if uninstall else "install",
               "game_dir": str(game), "changed": [d.name for _, d, _ in planned],
               "enable_addons": new_config != original_config, "backup": None,
+              "native_compatibility": compatibility,
               "runtime": "not tested; restart game to observe changes"}
     if not apply or (not planned and new_config == original_config):
         return result

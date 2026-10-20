@@ -1,6 +1,8 @@
 import importlib.util
 import json
 import hashlib
+import struct
+import zlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -39,6 +41,58 @@ class InstallTests(unittest.TestCase):
 
     def run_mod(self, **kwargs):
         return m.run(self.game, repo=self.repo, **kwargs)
+
+    def native_fixture(self, payload=b"current-abilities", *, external=False, checksum=None, expected=None):
+        preload=payload[:3];body=payload[3:]
+        tree=(b'vdata_c\0scripts\0abilities\0'+struct.pack('<IHHIIH',
+              zlib.crc32(payload) if checksum is None else checksum,len(preload),
+              3 if external else 0x7fff,7 if external else 0,len(body),0xffff)+preload+b'\0\0\0')
+        (self.game/'pak01_dir.vpk').write_bytes(struct.pack('<7I',0x55aa1234,2,len(tree),len(body),0,0,0)+tree+(b'' if external else body))
+        if external:(self.game/'pak01_003.vpk').write_bytes(b'padding'+body)
+        manifest=json.loads((self.repo/'manifest.json').read_text())
+        manifest['compatibility_checks']={'scripts/abilities.vdata_c':{'sha256':expected or hashlib.sha256(payload).hexdigest()}}
+        (self.repo/'manifest.json').write_text(json.dumps(manifest))
+
+    def test_changed_native_abilities_aborts_before_mutation(self):
+        self.native_fixture(expected='0'*64)
+        with self.assertRaisesRegex(RuntimeError,'abilities'):
+            self.run_mod(apply=True)
+        self.assertFalse((self.addons/'pak06_dir.vpk').exists())
+        self.assertEqual((self.game/'gameinfo.gi').read_bytes(),self.config)
+
+    def test_matching_inline_and_external_native_abilities_allow_install(self):
+        for external in (False,True):
+            with self.subTest(external=external):
+                self.native_fixture(external=external)
+                self.run_mod(apply=True)
+                self.run_mod(apply=True,uninstall=True)
+
+    def test_corrupt_native_abilities_crc_is_refused(self):
+        self.native_fixture(checksum=0)
+        with self.assertRaisesRegex(RuntimeError,'abilities'):
+            self.run_mod(apply=True)
+        self.assertFalse((self.addons/'pak06_dir.vpk').exists())
+
+    def test_future_native_update_does_not_prevent_removing_mod(self):
+        self.native_fixture();self.run_mod(apply=True)
+        self.native_fixture(expected='0'*64)
+        self.run_mod(apply=True,uninstall=True)
+        self.assertFalse((self.addons/'pak06_dir.vpk').exists())
+
+    def test_launch_refuses_future_native_update_without_opening_steam(self):
+        self.native_fixture();self.run_mod(apply=True)
+        self.native_fixture(expected='0'*64)
+        with patch.object(m.os,'startfile') as start:
+            with self.assertRaisesRegex(RuntimeError,'abilities'):
+                m.launch(self.game,repo=self.repo,apply=True)
+            start.assert_not_called()
+
+    def test_missing_native_resource_is_refused(self):
+        self.native_fixture()
+        raw=(self.game/'pak01_dir.vpk').read_bytes().replace(b'abilities',b'not_found')
+        (self.game/'pak01_dir.vpk').write_bytes(raw)
+        with self.assertRaisesRegex(RuntimeError,'abilities'):
+            self.run_mod(apply=True)
 
     def test_dry_run_writes_nothing(self):
         before = sorted(str(p.relative_to(self.root)) for p in self.root.rglob("*"))
