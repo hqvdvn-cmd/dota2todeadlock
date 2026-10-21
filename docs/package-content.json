@@ -1,6 +1,6 @@
 {
   "pak06_dir.vpk": {
-    "sha256": "a022312376342749b3e38d0912f2d31fd3c1948b2838d90e7c0290a973652517",
+    "sha256": "145de039a6b9968a142f8d0f5a761955dff7d6a0394ddfc3c258d145c78f7f71",
     "entries": {
       "panorama/images/items/weapon/monster_rounds_psd.vtex_c": "72F198E2898580EB0B5317392A7FF7C44FEB18094BD7F71F4CCF81F9557A25C9",
       "panorama/images/items/weapon/cultist_sacrifice_psd.vtex_c": "453FA5C30E196083FCD268BB87AE8B6E6A913C3426A5BF800465C22366B60CFF",
@@ -138,7 +138,7 @@
       "panorama/images/items/spirit/mystic_burst_psd.vtex_c": "E46C84C54A06A6DBEAA9CB6C554D6BB844870267FAA2387CF430E566332D9F83",
       "panorama/images/items/spirit/tankbuster_psd.vtex_c": "1A1FEFA71356EA8FA9F5E8F9338525672423E1D8501006E7F89432E5D05FD37F",
       "panorama/images/items/spirit/mystic_vulnerability_psd.vtex_c": "D2CE8638FD117C14216FFC5446AC179596E8E895A6867A80413F9401DD922AE2",
-      "panorama/images/items/spirit/mystic_slow_psd.vtex_c": "9D244609832E3B634BC23ED7C91B42D17FDC6D4DA1CBBA0EE0529C471F87277B",
+      "panorama/images/items/spirit/mystic_slow_psd.vtex_c": "CFF4331AE71EA405294D39C905069D139D2764B499242BADA10677CF3EFD3CB3",
       "panorama/images/items/spirit/escalating_exposure_psd.vtex_c": "925F251519861D9626A17B931CAFAC1473440D37ECA00EAE7F891830405E4704",
       "panorama/images/items/spirit/improved_cooldown_psd.vtex_c": "A9B885801C1826C508B67C1C816CEBD99F201F584F40B304CC334F08487292EA",
       "panorama/images/items/spirit/superior_cooldown_psd.vtex_c": "6635A0EDBA97B82AF7C8B21AB1281C6C159E6E73FC59B4B4E456FC98E0732450",

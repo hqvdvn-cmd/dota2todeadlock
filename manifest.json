@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.21-v18",
+  "version": "2026.10.21-v19",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
       "description": "154 mapped definitions; 228 textures; 19 native icons retained",
-      "revision": "v18 owner correspondences, component upgrade colors and recognizable Puckish",
-      "bytes": 10497318,
-      "sha256": "a022312376342749b3e38d0912f2d31fd3c1948b2838d90e7c0290a973652517"
+      "revision": "v19: Mystic Slow uses Lich Frost Blast; other 227 textures preserved",
+      "bytes": 10508086,
+      "sha256": "145de039a6b9968a142f8d0f5a761955dff7d6a0394ddfc3c258d145c78f7f71"
     },
     {
       "file": "pak07_dir.vpk",
@@ -49,7 +49,7 @@
     "Icons preserve owner-selected correspondences; repeated components can change color with tier. Puckish includes Puck portrait.",
     "Counterspell, Refresher, Shiva/Arctic Blast/Frostbite and shared Pavise barriers. No hero skins or voices.",
     "Native ability resource is checked by the Python installer; managers and manual copying do not execute that check.",
-    "Earlier game checks cover the combined local setup. The newest icon revision has package/pixel checks; no new in-game acceptance is claimed."
+    "Owner supplied fresh shop screenshots for all four price tiers and footage of named effects. This documents the combined local setup, not every item trigger or clean standalone match."
   ],
   "source_steam_build_id": "26091806",
   "compatibility_checks": {
@@ -61,5 +61,6 @@
       ],
       "scope": "Stock ability resource equality only; not full runtime acceptance."
     }
-  }
+  },
+  "verified_stock_build_id": "26097978"
 }

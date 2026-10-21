@@ -9,13 +9,13 @@
 
 Из эффектов уже перенесены Counterspell, Refresher, Shiva’s Guard для Cold Front, Arctic Blast/Frostbite и барьеры Pavise. Появление, попадания и разрушение барьеров изменены также у способностей героев. Дальше планируется перенос других Dota-эффектов.
 
-В V18 заменены 154 определения предметов, ещё 19 сохраняют родные иконки. В [таблице](docs/ITEMS.md) есть улучшения и режимные варианты. Скины героев и озвучка в комплект не входят.
+В V19 заменены 154 определения предметов, ещё 19 сохраняют родные иконки. В [таблице](docs/ITEMS.md) есть улучшения и режимные варианты. Скины героев и озвучка в комплект не входят.
 
 ## Скачать
 
-[Архив V18](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v18) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
+[Архив V19](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v19) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V18 доступна на GitHub и GameBanana.
+V19 доступна на GitHub и GameBanana.
 
 В разделе файлов GameBanana есть установка через **Deadlock Mod Manager**, **Grimoire Mod Manager** и **HELLCAT**. Отключи старую версию, установи новый архив и включи все пять компонентов.
 
@@ -23,7 +23,7 @@ V18 доступна на GitHub и GameBanana.
 
 1. Закрой Deadlock и менеджер. Сохрани копию `game/citadel/gameinfo.gi` и файлов предыдущей версии мода.
 2. В Steam открой Deadlock → Свойства → Установленные файлы → Обзор, затем перейди в `game/citadel`.
-3. Скопируй пять VPK в `game/citadel/addons`. В ZIP полного репозитория они лежат в `packages`, в архиве релиза V18 — в корне. Чужие моды не перезаписывай.
+3. Скопируй пять VPK в `game/citadel/addons`. В ZIP полного репозитория они лежат в `packages`, в архиве релиза V19 — в корне. Чужие моды не перезаписывай.
 4. В `gameinfo.gi` найди `FileSystem` → `SearchPaths`. Поставь `Game citadel/addons` выше `Game citadel`. Сохрани остальные игровые и языковые пути и проверь наличие строк:
 
 ```text
@@ -49,36 +49,35 @@ python scripts/manage.py launch --game-dir "D:/SteamLibrary/steamapps/common/Dea
 
 ## Демонстрация
 
-![Иконки V18](assets/demo/icons-v18.png)
+[Полное минутное видео](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/download/v19/dota2-to-deadlock-v19-showcase.mp4)
 
-Видео и игровые скриншоты ниже сняты на более ранней версии. Скин героя с них в комплект не входит.
+Скриншоты и видео предоставлены для V19. Скин героя установлен отдельно и в мод не входит.
 
-[Ролик — 27 секунд](assets/demo/showcase.mp4)
+![Item icons — 800 souls](assets/demo/v19/items-800.png)
 
-<details>
-<summary>Скриншоты: предметы и эффекты</summary>
+![Item icons — 1600 souls; Mystic Slow uses Lich Frost Blast](assets/demo/v19/items-1600.png)
 
-**Иконки предметов — нажми на изображение для полного размера.**
+![Item icons — 3200 souls](assets/demo/v19/items-3200.png)
 
-<a href="assets/demo/items-800-1600.png"><img src="assets/demo/items-800-1600.png" width="32%" alt="Иконки предметов за 800 и 1600 душ"></a>
-<a href="assets/demo/items-3200.png"><img src="assets/demo/items-3200.png" width="32%" alt="Иконки предметов за 3200 душ"></a>
-<a href="assets/demo/items-6400.png"><img src="assets/demo/items-6400.png" width="32%" alt="Иконки предметов за 6400 душ"></a>
+![Item icons — 6400 souls](assets/demo/v19/items-6400.png)
 
-**Pavise: голубой, золотой и красный варианты.**
+![Grit — cyan Pavise barrier](assets/demo/v19/grit.png)
 
-<a href="assets/demo/pavise-cyan.png"><img src="assets/demo/pavise-cyan.png" width="32%" alt="Голубой барьер Pavise"></a>
-<a href="assets/demo/pavise-gold.png"><img src="assets/demo/pavise-gold.png" width="32%" alt="Золотой барьер Pavise"></a>
-<a href="assets/demo/pavise-red.png"><img src="assets/demo/pavise-red.png" width="32%" alt="Красный барьер Pavise на герое и союзнике"></a>
+![Guardian Ward — gold Pavise barriers](assets/demo/v19/guardian-ward.png)
 
-**Cold Front / Shiva.**
+![Divine Barrier — red Pavise barriers](assets/demo/v19/divine-barrier.png)
 
-![Волна Shiva в Deadlock](assets/demo/cold-front.png)
+![Cold Front — Shiva wave](assets/demo/v19/cold-front.png)
 
-</details>
+![Arctic Blast — red Shiva wave and Frostbite](assets/demo/v19/arctic-blast.png)
+
+![Counterspell — Anti-Mage shell](assets/demo/v19/counterspell.png)
+
+![Refresher — green spiral](assets/demo/v19/refresher.png)
 
 ## Совместимость
 
-База — игровые ресурсы от 21 октября. Патч Deadlock может сломать замену ресурсов или сбросить загрузку модов. Python-установщик проверяет штатный файл способностей; менеджеры и ручное копирование эту проверку не запускают. У новой ревизии иконок проверены файлы и пиксели; игровое подтверждение ещё нужно.
+База — игровые ресурсы от 21 октября. Патч Deadlock может сломать замену ресурсов или сбросить загрузку модов. Python-установщик проверяет штатный файл способностей; менеджеры и ручное копирование эту проверку не запускают. На новых скриншотах видны все четыре ценовых тира и Mystic Slow с иконкой Лича. Видео показывает названные эффекты в общем комплекте модов; остальные срабатывания и отдельный standalone-матч не проверялись.
 
 Для [Шуры](https://github.com/hqvdvn-cmd/sekiro-shura-deadlock) используй её D2D-патч привязки ульты. Две полные замены файла способностей требуют совместимой сборки.
 

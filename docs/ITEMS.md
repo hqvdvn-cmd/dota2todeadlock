@@ -42,7 +42,7 @@
 | Long Range | 2 | Dragon Lance (original) |
 | Melee Charge | 2 | Walrus PUNCH! (original) |
 | Mystic Shot | 2 | Enchanted Quiver (original) |
-| Mystic Slow | 2 | Shiva's Guard (original) |
+| Mystic Slow | 2 | Frost Blast (Lich) (original) |
 | Mystic Vulnerability | 2 | Veil of Discord (original) |
 | Reactive Barrier | 2 | Pavise (gold) |
 | Restorative Locket | 2 | Magic Wand (original) |

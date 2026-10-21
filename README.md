@@ -9,13 +9,13 @@ Dota item icons and effects for Deadlock. Icons are picked by what an item does:
 
 The effects included so far are Counterspell, Refresher, Shiva’s Guard for Cold Front, Arctic Blast/Frostbite and Pavise barriers. Barrier appearance, hit and break effects also apply to barriers from hero abilities. More Dota effects are planned.
 
-V18 has 154 mapped item definitions and leaves 19 with their native icon. The [full table](docs/ITEMS.md) includes upgrades and mode-specific entries. Hero skins and voices are separate mods.
+V19 has 154 mapped item definitions and leaves 19 with their native icon. The [full table](docs/ITEMS.md) includes upgrades and mode-specific entries. Hero skins and voices are separate mods.
 
 ## Download
 
-[V18 archive](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v18) · [Full repository ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
+[V19 archive](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v19) · [Full repository ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V18 is available on GitHub and GameBanana.
+V19 is available on GitHub and GameBanana.
 
 The GameBanana file has one-click install buttons for **Deadlock Mod Manager**, **Grimoire Mod Manager** and **HELLCAT**. Disable the previous version, install the new archive and enable all five components.
 
@@ -23,7 +23,7 @@ The GameBanana file has one-click install buttons for **Deadlock Mod Manager**, 
 
 1. Close Deadlock and your mod manager. Back up `game/citadel/gameinfo.gi` and any older files from this mod.
 2. In Steam, open Deadlock → Properties → Installed Files → Browse, then open `game/citadel`.
-3. Copy the five VPK files into `game/citadel/addons`. In the full repository ZIP they are in `packages`; in the V18 release archive they are at the archive root. Do not overwrite another mod’s files.
+3. Copy the five VPK files into `game/citadel/addons`. In the full repository ZIP they are in `packages`; in the V19 release archive they are at the archive root. Do not overwrite another mod’s files.
 4. In `gameinfo.gi`, find `FileSystem` → `SearchPaths`. Place `Game citadel/addons` above `Game citadel`. Keep the existing game/language paths and make sure these entries are present:
 
 ```text
@@ -49,36 +49,35 @@ For removal, use `uninstall` instead of `install` and omit `--enable-addons`, fr
 
 ## Preview
 
-![V18 item icons](assets/demo/icons-v18.png)
+[Watch the full one-minute showcase](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/download/v19/dota2-to-deadlock-v19-showcase.mp4)
 
-The video and game screenshots below show an earlier version. The character skin in them is not included.
+The screenshots and video below were supplied for V19. The character skin is installed separately and is not included.
 
-[Watch the 27-second showcase](assets/demo/showcase.mp4)
+![Item icons — 800 souls](assets/demo/v19/items-800.png)
 
-<details>
-<summary>Screenshots: items and effects</summary>
+![Item icons — 1600 souls; Mystic Slow uses Lich Frost Blast](assets/demo/v19/items-1600.png)
 
-**Item icons — click an image to view it at full size.**
+![Item icons — 3200 souls](assets/demo/v19/items-3200.png)
 
-<a href="assets/demo/items-800-1600.png"><img src="assets/demo/items-800-1600.png" width="32%" alt="Item icons: 800 and 1,600 souls"></a>
-<a href="assets/demo/items-3200.png"><img src="assets/demo/items-3200.png" width="32%" alt="Item icons: 3,200 souls"></a>
-<a href="assets/demo/items-6400.png"><img src="assets/demo/items-6400.png" width="32%" alt="Item icons: 6,400 souls"></a>
+![Item icons — 6400 souls](assets/demo/v19/items-6400.png)
 
-**Pavise: cyan, gold and red variants.**
+![Grit — cyan Pavise barrier](assets/demo/v19/grit.png)
 
-<a href="assets/demo/pavise-cyan.png"><img src="assets/demo/pavise-cyan.png" width="32%" alt="Cyan Pavise barrier"></a>
-<a href="assets/demo/pavise-gold.png"><img src="assets/demo/pavise-gold.png" width="32%" alt="Gold Pavise barrier"></a>
-<a href="assets/demo/pavise-red.png"><img src="assets/demo/pavise-red.png" width="32%" alt="Red Pavise barrier on the player and an ally"></a>
+![Guardian Ward — gold Pavise barriers](assets/demo/v19/guardian-ward.png)
 
-**Cold Front / Shiva.**
+![Divine Barrier — red Pavise barriers](assets/demo/v19/divine-barrier.png)
 
-![Shiva wave in Deadlock](assets/demo/cold-front.png)
+![Cold Front — Shiva wave](assets/demo/v19/cold-front.png)
 
-</details>
+![Arctic Blast — red Shiva wave and Frostbite](assets/demo/v19/arctic-blast.png)
+
+![Counterspell — Anti-Mage shell](assets/demo/v19/counterspell.png)
+
+![Refresher — green spiral](assets/demo/v19/refresher.png)
 
 ## Compatibility
 
-Based on the October 21 game resources. New game updates can break replacements or reset addon loading. The Python installer checks the native ability file; managers and manual copying do not run this check. The newest icon revision has file/pixel checks, with in-game confirmation still pending.
+Based on the October 21 game resources. New game updates can break replacements or reset addon loading. The Python installer checks the native ability file; managers and manual copying do not run this check. The V19 screenshots show all four shop price tiers, including the new Mystic Slow. The supplied footage shows the named effects in the combined local setup; other triggers and standalone matches remain outside this check.
 
 When using [Shura](https://github.com/hqvdvn-cmd/sekiro-shura-deadlock), use its D2D compatibility patch for the ultimate binding. Do not combine whole ability-resource replacements without a matching patch.
 
