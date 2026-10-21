@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="284" height="32" role="img" aria-label="Deadlock Mod Manager: 1-click install">
+  <title>Deadlock Mod Manager: 1-click install</title>
+  <rect width="284" height="32" rx="6" fill="#242522"/>
+  <path d="M6 0h174v32H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6" fill="#56654c"/>
+  <g font-family="Verdana,Arial,sans-serif" font-size="12" text-anchor="middle" fill="#f5f3e8"><text x="87" y="21">Deadlock Mod Manager</text><text x="229" y="21">1-click install</text></g>
+</svg>

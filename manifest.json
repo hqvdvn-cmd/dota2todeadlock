@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.21-v14",
+  "version": "2026.10.21-v18",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
-      "description": "160 named item definitions; 241 textures; 13 native definitions retained",
-      "revision": "v14 full approved table",
-      "bytes": 8391545,
-      "sha256": "1bf05ffc91855d2eaa63da8ff88e4b2238d661e1a7f573aa1919e1c7c2fc097c"
+      "description": "154 mapped definitions; 228 textures; 19 native icons retained",
+      "revision": "v18 owner correspondences, component upgrade colors and recognizable Puckish",
+      "bytes": 10497318,
+      "sha256": "a022312376342749b3e38d0912f2d31fd3c1948b2838d90e7c0290a973652517"
     },
     {
       "file": "pak07_dir.vpk",
@@ -45,11 +45,11 @@
     }
   ],
   "notes": [
-    "Stock shop and hero selection. No hero model or voice replacements.",
-    "160 selected named definitions include upgrades and mode-specific items; this is not a live shop count.",
-    "Native ability resource checked before install and scripted launch. This check does not cover all game resources.",
-    "Shared barrier start, impact and break resources affect barriers from items and hero abilities.",
-    "Owner reported normal behavior in the combined local setup after this update. Clean Dota-only match acceptance and exact prior crash cause remain unverified."
+    "154 mapped definitions; 19 native icons retained. Counts include upgrades and mode-specific entries.",
+    "Icons preserve owner-selected correspondences; repeated components can change color with tier. Puckish includes Puck portrait.",
+    "Counterspell, Refresher, Shiva/Arctic Blast/Frostbite and shared Pavise barriers. No hero skins or voices.",
+    "Native ability resource is checked by the Python installer; managers and manual copying do not execute that check.",
+    "Earlier game checks cover the combined local setup. The newest icon revision has package/pixel checks; no new in-game acceptance is claimed."
   ],
   "source_steam_build_id": "26091806",
   "compatibility_checks": {
