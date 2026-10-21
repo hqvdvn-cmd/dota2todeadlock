@@ -13,7 +13,9 @@
 
 ## Скачать
 
-[GameBanana](https://gamebanana.com/mods/729017#Files) · [ZIP с GitHub](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip)
+[Архив V18](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v18) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
+
+V18 доступна на GitHub. Обновление файла на GameBanana пока не опубликовано.
 
 В разделе файлов GameBanana есть установка через **Deadlock Mod Manager**, **Grimoire Mod Manager** и **HELLCAT**. Отключи старую версию, установи новый архив и включи все пять компонентов.
 
@@ -21,7 +23,7 @@
 
 1. Закрой Deadlock и менеджер. Сохрани копию `game/citadel/gameinfo.gi` и файлов предыдущей версии мода.
 2. В Steam открой Deadlock → Свойства → Установленные файлы → Обзор, затем перейди в `game/citadel`.
-3. Скопируй пять VPK в `game/citadel/addons`. В ZIP с GitHub они лежат в `packages`, в архиве GameBanana — в корне. Чужие моды не перезаписывай.
+3. Скопируй пять VPK в `game/citadel/addons`. В ZIP полного репозитория они лежат в `packages`, в архиве релиза V18 — в корне. Чужие моды не перезаписывай.
 4. В `gameinfo.gi` найди `FileSystem` → `SearchPaths`. Поставь `Game citadel/addons` выше `Game citadel`. Сохрани остальные игровые и языковые пути и проверь наличие строк:
 
 ```text

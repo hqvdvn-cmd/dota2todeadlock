@@ -13,7 +13,9 @@ V18 has 154 mapped item definitions and leaves 19 with their native icon. The [f
 
 ## Download
 
-[GameBanana](https://gamebanana.com/mods/729017#Files) · [GitHub ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip)
+[V18 archive](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v18) · [Full repository ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
+
+V18 is available on GitHub. The GameBanana file update is still pending.
 
 The GameBanana file has one-click install buttons for **Deadlock Mod Manager**, **Grimoire Mod Manager** and **HELLCAT**. Disable the previous version, install the new archive and enable all five components.
 
@@ -21,7 +23,7 @@ The GameBanana file has one-click install buttons for **Deadlock Mod Manager**, 
 
 1. Close Deadlock and your mod manager. Back up `game/citadel/gameinfo.gi` and any older files from this mod.
 2. In Steam, open Deadlock → Properties → Installed Files → Browse, then open `game/citadel`.
-3. Copy the five VPK files into `game/citadel/addons`. In the GitHub ZIP they are in `packages`; in the GameBanana ZIP they are at the archive root. Do not overwrite another mod’s files.
+3. Copy the five VPK files into `game/citadel/addons`. In the full repository ZIP they are in `packages`; in the V18 release archive they are at the archive root. Do not overwrite another mod’s files.
 4. In `gameinfo.gi`, find `FileSystem` → `SearchPaths`. Place `Game citadel/addons` above `Game citadel`. Keep the existing game/language paths and make sure these entries are present:
 
 ```text
