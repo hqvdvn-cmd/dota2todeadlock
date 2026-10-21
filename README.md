@@ -15,7 +15,7 @@ V18 has 154 mapped item definitions and leaves 19 with their native icon. The [f
 
 [V18 archive](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v18) · [Full repository ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V18 is available on GitHub. The GameBanana file update is still pending.
+V18 is available on GitHub and GameBanana.
 
 The GameBanana file has one-click install buttons for **Deadlock Mod Manager**, **Grimoire Mod Manager** and **HELLCAT**. Disable the previous version, install the new archive and enable all five components.
 

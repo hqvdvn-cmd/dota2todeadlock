@@ -15,7 +15,7 @@
 
 [Архив V18](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v18) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V18 доступна на GitHub. Обновление файла на GameBanana пока не опубликовано.
+V18 доступна на GitHub и GameBanana.
 
 В разделе файлов GameBanana есть установка через **Deadlock Mod Manager**, **Grimoire Mod Manager** и **HELLCAT**. Отключи старую версию, установи новый архив и включи все пять компонентов.
 
