@@ -15,7 +15,7 @@
 
 [Архив V25](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v25) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V25 можно скачать на GitHub. На GameBanana размещается архив для мод-менеджеров.
+V25 можно скачать на GitHub. Обновление копии на GameBanana пока ожидается.
 
 В разделе файлов GameBanana есть установка через **Deadlock Mod Manager**, **Grimoire Mod Manager** и **HELLCAT**. Отключи старую версию, установи новый архив и включи все пять компонентов.
 
@@ -23,7 +23,7 @@ V25 можно скачать на GitHub. На GameBanana размещаетс�
 
 1. Закрой Deadlock и менеджер. Сохрани копию `game/citadel/gameinfo.gi` и файлов предыдущей версии мода.
 2. В Steam открой Deadlock → Свойства → Установленные файлы → Обзор, затем перейди в `game/citadel`.
-3. Скопируй пять VPK в `game/citadel/addons`. В ZIP полного репозитория они лежат в `packages`, в архиве релиза V19 — в корне. Чужие моды не перезаписывай.
+3. Скопируй пять VPK в `game/citadel/addons`. В ZIP полного репозитория они лежат в `packages`, в архиве релиза V25 — в корне. Чужие моды не перезаписывай.
 4. В `gameinfo.gi` найди `FileSystem` → `SearchPaths`. Поставь `Game citadel/addons` выше `Game citadel`. Сохрани остальные игровые и языковые пути и проверь наличие строк:
 
 ```text
