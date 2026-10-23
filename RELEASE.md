@@ -1,5 +1,5 @@
-Mystic Slow now uses Frost Blast, Lich’s first ability, instead of a second Shiva’s Guard. Its original colors are preserved. The other 227 icon textures and all four effect components are unchanged.
+V25 updates the item icons. Fifty-two composite icons have been refitted for circular HUD slots, with larger secondary components. Since V19, component colors have also been matched to their Deadlock bonuses; Mercurial Magnum uses standard Overload plus Aghanim’s Shard. The item table lists the current sources and colors.
 
-Fresh media: shop screenshots for 800, 1600, 3200 and 6400 souls; Grit, Guardian Ward, Divine Barrier, Cold Front, Arctic Blast, Counterspell and Refresher. The one-minute video shows the combined local setup; the character skin is not included.
+Existing effects keep their appearance. Seven visual bindings have been reapplied to the current game’s ability file so the update retains the new native definitions. This release does not add BKB, Ghost Scepter or Blade Mail effects. Character skins and voices are separate.
 
-Download the DMM ZIP and enable all five components. Manual installation and removal are in the EN/RU README. More Dota effects are planned; this update adds no new effect ports.
+Download dota2-to-deadlock-v25-r2-dmm.zip. Disable the previous version, import the ZIP into your manager and enable all five components. Deadlock Mod Manager, Grimoire and HELLCAT are supported. Manual installation is in the English and Russian README files. The three V25 icon sheets are new; the gameplay screenshots and video are from V19.

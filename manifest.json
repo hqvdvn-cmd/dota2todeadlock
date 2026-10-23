@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.21-v19",
+  "version": "2026.10.23-v25",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
       "description": "154 mapped definitions; 228 textures; 19 native icons retained",
-      "revision": "v19: Mystic Slow uses Lich Frost Blast; other 227 textures preserved",
-      "bytes": 10508086,
-      "sha256": "145de039a6b9968a142f8d0f5a761955dff7d6a0394ddfc3c258d145c78f7f71"
+      "revision": "v25: 52 composite icons refitted for circular HUD crops; component stat colors and Dota sources updated since v19",
+      "bytes": 11261369,
+      "sha256": "429ed44fbc20a0ac14e819d79f4b8e8e43512480e5a0b354465867913898a22a"
     },
     {
       "file": "pak07_dir.vpk",
@@ -31,9 +31,9 @@
       "file": "pak09_dir.vpk",
       "component": "Shiva and barrier bindings",
       "description": "Cold Front wave, red Arctic Blast/Frostbite and passive barrier visual bindings",
-      "revision": "seven visual deltas rebased on native build 26090082/26091806",
+      "revision": "Seven existing visual bindings rebased on native build 26147187",
       "bytes": 5876614,
-      "sha256": "7cee2aeeaf6d53fde1062b5a0b8af6038fd0e4f5bb3ffa840ff3580f3a40d1d9"
+      "sha256": "7831c132ebffe2bd46c18ca10577b82e881689e0c40f81c6351c4fd472da88e2"
     },
     {
       "file": "pak10_dir.vpk",
@@ -46,21 +46,20 @@
   ],
   "notes": [
     "154 mapped definitions; 19 native icons retained. Counts include upgrades and mode-specific entries.",
-    "Icons preserve owner-selected correspondences; repeated components can change color with tier. Puckish includes Puck portrait.",
+    "Composite components use Deadlock stat magnitudes to select upgrade colors. Native icons and shared ability paths stay unchanged.",
     "Counterspell, Refresher, Shiva/Arctic Blast/Frostbite and shared Pavise barriers. No hero skins or voices.",
     "Native ability resource is checked by the Python installer; managers and manual copying do not execute that check.",
-    "Owner supplied fresh shop screenshots for all four price tiers and footage of named effects. This documents the combined local setup, not every item trigger or clean standalone match."
+    "V25 icon previews and packed pixels checked; owner authorized public release after local use. Earlier V19 gameplay media is retained and labeled. This release adds no effects or skins."
   ],
-  "source_steam_build_id": "26091806",
+  "source_steam_build_id": "26147187",
   "compatibility_checks": {
     "scripts/abilities.vdata_c": {
-      "sha256": "bdb27bcc6ae29471ec942a3f23c84d14a913021896bb5bc3c5bf21f8031c8f8c",
+      "sha256": "307f5303832141a2ffda63841f3c8709b0007a08c07ad8939412d0dadae900fc",
       "matched_stock_build_ids": [
-        "26090082",
-        "26091806"
+        "26147187"
       ],
       "scope": "Stock ability resource equality only; not full runtime acceptance."
     }
   },
-  "verified_stock_build_id": "26097978"
+  "verified_stock_build_id": "26147187"
 }

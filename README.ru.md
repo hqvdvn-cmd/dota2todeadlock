@@ -9,13 +9,13 @@
 
 Из эффектов уже перенесены Counterspell, Refresher, Shiva’s Guard для Cold Front, Arctic Blast/Frostbite и барьеры Pavise. Появление, попадания и разрушение барьеров изменены также у способностей героев. Дальше планируется перенос других Dota-эффектов.
 
-В V19 заменены 154 определения предметов, ещё 19 сохраняют родные иконки. В [таблице](docs/ITEMS.md) есть улучшения и режимные варианты. Скины героев и озвучка в комплект не входят.
+В V25 заменены 154 определения предметов, ещё 19 сохраняют родные иконки. В [таблице](docs/ITEMS.md) есть улучшения и режимные варианты. Скины героев и озвучка в комплект не входят.
 
 ## Скачать
 
-[Архив V19](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v19) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
+[Архив V25](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v25) · [ZIP полного репозитория](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V19 доступна на GitHub и GameBanana.
+V25 можно скачать на GitHub. На GameBanana размещается архив для мод-менеджеров.
 
 В разделе файлов GameBanana есть установка через **Deadlock Mod Manager**, **Grimoire Mod Manager** и **HELLCAT**. Отключи старую версию, установи новый архив и включи все пять компонентов.
 
@@ -48,6 +48,17 @@ python scripts/manage.py launch --game-dir "D:/SteamLibrary/steamapps/common/Dea
 Для удаления замени `install` на `uninstall` и убери `--enable-addons`. Выполняй из той же распакованной папки. Сохрани `.local/backups`.
 
 ## Демонстрация
+
+В V25 переработаны 52 составные иконки: второстепенные части сдвинуты внутрь, чтобы их было видно в круглых слотах HUD. Изображения и цвета улучшений соответствуют текущей таблице предметов. Ниже — рендеры новых иконок; игровые скриншоты и видео дальше относятся к V19.
+
+![V25 composite icons 1](assets/demo/v25/icons-1.png)
+
+
+![V25 composite icons 2](assets/demo/v25/icons-2.png)
+
+
+![V25 composite icons 3](assets/demo/v25/icons-3.png)
+
 
 [Полное минутное видео](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/download/v19/dota2-to-deadlock-v19-showcase.mp4)
 

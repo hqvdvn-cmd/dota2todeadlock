@@ -9,13 +9,13 @@ Dota item icons and effects for Deadlock. Icons are picked by what an item does:
 
 The effects included so far are Counterspell, Refresher, Shiva’s Guard for Cold Front, Arctic Blast/Frostbite and Pavise barriers. Barrier appearance, hit and break effects also apply to barriers from hero abilities. More Dota effects are planned.
 
-V19 has 154 mapped item definitions and leaves 19 with their native icon. The [full table](docs/ITEMS.md) includes upgrades and mode-specific entries. Hero skins and voices are separate mods.
+V25 has 154 mapped item definitions and leaves 19 with their native icon. The [full table](docs/ITEMS.md) includes upgrades and mode-specific entries. Hero skins and voices are separate mods.
 
 ## Download
 
-[V19 archive](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v19) · [Full repository ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
+[V25 archive](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/tag/v25) · [Full repository ZIP](https://github.com/hqvdvn-cmd/dota2todeadlock/archive/refs/heads/main.zip) · [GameBanana](https://gamebanana.com/mods/729017#Files)
 
-V19 is available on GitHub and GameBanana.
+Download V25 from GitHub. GameBanana mirrors the manager archive.
 
 The GameBanana file has one-click install buttons for **Deadlock Mod Manager**, **Grimoire Mod Manager** and **HELLCAT**. Disable the previous version, install the new archive and enable all five components.
 
@@ -49,6 +49,17 @@ For removal, use `uninstall` instead of `install` and omit `--enable-addons`, fr
 
 ## Preview
 
+V25 refits 52 composite icons so secondary components remain visible in circular HUD slots. Component images and upgrade colors follow the current item table. These sheets are rendered previews; the gameplay screenshots and video below are from V19.
+
+![V25 composite icons 1](assets/demo/v25/icons-1.png)
+
+
+![V25 composite icons 2](assets/demo/v25/icons-2.png)
+
+
+![V25 composite icons 3](assets/demo/v25/icons-3.png)
+
+
 [Watch the full one-minute showcase](https://github.com/hqvdvn-cmd/dota2todeadlock/releases/download/v19/dota2-to-deadlock-v19-showcase.mp4)
 
 The screenshots and video below were supplied for V19. The character skin is installed separately and is not included.
@@ -77,7 +88,7 @@ The screenshots and video below were supplied for V19. The character skin is ins
 
 ## Compatibility
 
-Based on the October 21 game resources. New game updates can break replacements or reset addon loading. The Python installer checks the native ability file; managers and manual copying do not run this check. The V19 screenshots show all four shop price tiers, including the new Mystic Slow. The supplied footage shows the named effects in the combined local setup; other triggers and standalone matches remain outside this check.
+The ability bindings were rebased on the October 23 game resources. New game updates can break replacements or reset addon loading. The Python installer checks the native ability file; managers and manual copying do not run this check. The V19 screenshots show all four shop price tiers, including the new Mystic Slow. The supplied footage shows the named effects in the combined local setup; other triggers and standalone matches remain outside this check.
 
 When using [Shura](https://github.com/hqvdvn-cmd/sekiro-shura-deadlock), use its D2D compatibility patch for the ultimate binding. Do not combine whole ability-resource replacements without a matching patch.
 

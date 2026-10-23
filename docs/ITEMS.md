@@ -2,6 +2,8 @@
 
 154 replacements; 19 definitions retain native icons. Counts include upgrades and mode-specific entries.
 
+Dota artwork; component upgrade colors follow the selected Deadlock stat magnitude.
+
 | Deadlock | Tier | Dota source and color |
 | --- | --- | --- |
 | Close Quarters | 1 | Tag Team (original) |
@@ -50,15 +52,15 @@
 | Slowing Bullets | 2 | Orb of Frost (original) |
 | Slowing Hex | 2 | Waning Rift (original) |
 | Spirit Lifesteal | 2 | Voodoo Mask (gold) |
-| Spirit Sap | 2 | Mage Slayer (gold) + Veil of Discord (original) |
+| Spirit Sap | 2 | Mage Slayer (original) + Veil of Discord (original) |
 | Spirit Shielding | 2 | Hood of Defiance (original) |
-| Spirit Shredder | 2 | Grove Bow (original) + Voodoo Mask (gold) |
+| Spirit Shredder | 2 | Grove Bow (original) + Voodoo Mask (original) |
 | Split Shot | 2 | Split Shot (original) |
 | Stalker | 2 | Track (original) + Poison Sting (original) + Orb of Blight (original) |
 | Swift Striker | 2 | Hyperstone (original) |
 | Trophy Collector | 2 | Track (original) |
-| Weakening Headshot | 2 | Headshot (gold) + Desolator (original) |
-| Weapon Shielding | 2 | Kraken Shell (original) + Resonant Pulse (original) |
+| Weakening Headshot | 2 | Headshot (original) + Desolator (gold) |
+| Weapon Shielding | 2 | Kraken Shell (original) + Resonant Pulse (gold) |
 | Alchemical Fire | 3 | Acid Spray (original) |
 | Berserker | 3 | Uproar (original) |
 | Blood Tribute | 3 | Armlet of Mordiggian (original) |
@@ -71,15 +73,15 @@
 | Dispel Magic | 3 | Press The Attack (original) + Puckish (Puck innate) (original) |
 | Escalating Resilience | 3 | Reactive Armor (original) |
 | Express Shot | 3 | Geminate Attack (original) |
-| Fortitude | 3 | Tranquil Boots (red) + Heart of Tarrasque (original) |
+| Fortitude | 3 | Tranquil Boots (original) + Heart of Tarrasque (original) |
 | Fury Trance | 3 | Mask of Madness (original) |
-| Greater Expansion | 3 | chasm_stone (red) + Aether Lens (red) |
-| Headhunter | 3 | Headshot (red) + Morbid Mask (red) + Wind Lace (red) |
+| Greater Expansion | 3 | chasm_stone (gold) + Aether Lens (gold) |
+| Headhunter | 3 | Headshot (gold) + Morbid Mask (original) + Wind Lace (original) |
 | Healing Nova | 3 | Mekansm (original) |
-| Heroic Aura | 3 | Drum of Endurance (original) + Assault Cuirass (original) |
+| Heroic Aura | 3 | Drum of Endurance (gold) + Assault Cuirass (original) |
 | Hunter's Aura | 3 | Assault Cuirass (original) |
 | Knockdown | 3 | Cursed Crown (original) |
-| Lifestrike | 3 | Feast (red) + Open Wounds (red) |
+| Lifestrike | 3 | Feast (gold) + Open Wounds (gold) |
 | Metal Skin | 3 | Ghost Scepter (original) |
 | Point Blank | 3 | Tag Team (red) |
 | Radiant Regeneration | 3 | Spirit Siphon (original) |
@@ -87,78 +89,76 @@
 | Shadow Weave | 3 | Shadow Blade (original) |
 | Sharpshooter | 3 | Dragon Lance (black) |
 | Silence Wave | 3 | Silence (original) |
-| Spirit Rend | 3 | Grove Bow (red) + Headshot (red) |
+| Spirit Rend | 3 | Grove Bow (original) + Headshot (original) |
 | Spirit Resilience | 3 | Eternal Shroud (original) |
-| Spirit Snatch | 3 | Parasma (original) + Mage Slayer (red) |
+| Spirit Snatch | 3 | Parasma (original) + Mage Slayer (original) |
 | Superior Cooldown | 3 | Octarine Core (gold) |
 | Superior Duration | 3 | Timeless Relic (red) |
 | Surge of Power | 3 | Fiery Soul (original) + Kaya (red) |
-| Tankbuster | 3 | Phylactery (red) + Static Field (original) |
+| Tankbuster | 3 | Phylactery (original) + Static Field (original) |
 | Tesla Bullets | 3 | Maelstrom (original) |
 | Torment Pulse | 3 | Radiance (original) |
-| Toxic Bullets | 3 | Poison Attack (original) + Feast (red) + Orb of Venom (original) |
+| Toxic Bullets | 3 | Poison Attack (original) + Feast (original) + Orb of Venom (original) |
 | Veil Walker | 3 | Glimmer Cape (original) |
 | Warp Stone | 3 | Blink Dagger (original) |
 | Weighted Shots | 3 | Viscous Nasal Goo (original) + Sange and Yasha (original) + Crystalys (original) |
-| Arctic Blast | 4 | Shiva's Guard (red) + Frostbite (red) |
+| Arctic Blast | 4 | Shiva's Guard (red) + Frostbite (original) |
 | Armor Piercer | 4 | Monkey King Bar (original) |
 | Boundless Spirit | 4 | Kaya (red) |
 | Capacitor | 4 | Mjollnir (original) + Rod of Atos (original) |
 | Cheat Death | 4 | Shallow Grave (original) |
 | Colossus | 4 | Giant's Ring (original) |
-| Crippling Headshot | 4 | Headshot (red) + Natural Order (original) |
-| Crushing Fists | 4 | Walrus PUNCH! (red) + Lil' Shredder (red) |
+| Crippling Headshot | 4 | Headshot (original) + Natural Order (red) |
+| Crushing Fists | 4 | Walrus PUNCH! (red) + Lil' Shredder (original) |
 | Cursed Relic | 4 | Nullifier (original) + Scythe of Vyse (original) |
-| Divine Barrier | 4 | Solar Crest (red) + Demonic Cleanse (red) |
+| Divine Barrier | 4 | Solar Crest (red) + Demonic Cleanse (original) |
 | Diviner's Kevlar | 4 | Pavise (red) + Kaya (red) |
 | Echo Shard | 4 | Rearm (original) |
 | Escalating Exposure | 4 | Veil of Discord (red) |
 | Ethereal Shift | 4 | Shadow Realm (original) |
-| Focus Lens | 4 | Orchid Malevolence (original) + Mage Slayer (red) + Veil of Discord (red) |
+| Focus Lens | 4 | Orchid Malevolence (original) + Mage Slayer (original) + Veil of Discord (original) |
 | Frenzy | 4 | Berserker's Blood (original) + Sange and Yasha (red) + Morbid Mask (red) + Moon Shard (original) |
 | Glass Cannon | 4 | Divine Rapier (original) |
-| Healing Tempo | 4 | Holy Locket (red) + Bloodlust (original) |
-| Indomitable | 4 | Linken's Sphere (original) + Pavise (red) + Octarine Core (red) |
-| Infuser | 4 | Bloodstone (original) + Kaya (red) |
-| Inhibitor | 4 | Enfeeble (original) + Mage Slayer (red) + Eye of Skadi (original) |
-| Juggernaut | 4 | Untouchable (original) + Boots of Bearing (red) |
-| Leech | 4 | Satanic (original) + Bloodstone (original) |
+| Healing Tempo | 4 | Holy Locket (gold) + Bloodlust (red) |
+| Indomitable | 4 | Linken's Sphere (original) + Pavise (gold) + Octarine Core (gold) |
+| Infuser | 4 | Bloodstone (red) + Kaya (red) |
+| Inhibitor | 4 | Enfeeble (original) + Mage Slayer (original) + Eye of Skadi (original) |
+| Juggernaut | 4 | Untouchable (original) + Boots of Bearing (original) |
+| Leech | 4 | Satanic (gold) + Bloodstone (gold) |
 | Lightning Scroll | 4 | Aftershock (original) |
 | Lucky Shot | 4 | Daedalus (original) |
 | Magic Carpet | 4 | Jetpack (original) |
-| Mercurial Magnum | 4 | Electric Rave (original) + Overload (red) |
+| Mercurial Magnum | 4 | Overload (original) + Aghanim’s Shard (original) |
 | Mystic Reverb | 4 | Disseminate (original) |
-| Phantom Strike | 4 | Phantom Strike (original) + Heaven's Halberd (red) |
+| Phantom Strike | 4 | Phantom Strike (original) + Heaven's Halberd (original) |
 | Plated Armor | 4 | Butterfly (original) + Vanguard (original) |
 | Refresher | 4 | Refresher Orb (original) |
 | Ricochet | 4 | Moon Glaives (original) |
-| Scourge | 4 | Flame Guard (original) + Heartstopper Aura (original) + Demonic Cleanse (original) |
-| Silencer | 4 | Mage Slayer (red) + mind_breaker (original) |
+| Scourge | 4 | Flame Guard (original) + Heartstopper Aura (gold) + Demonic Cleanse (original) |
+| Silencer | 4 | Mage Slayer (original) + mind_breaker (original) |
 | Siphon Bullets | 4 | Decay (original) + Essence Shift (original) |
 | Spellbreaker | 4 | Dandelion Amulet (original) |
 | Spellslinger | 4 | Warpath (original) |
-| Spirit Burn | 4 | Maledict (original) + Ice Blast (original) |
-| Spiritual Overflow | 4 | Essence Shift (original) + Kaya (red) + Voodoo Mask (red) |
+| Spirit Burn | 4 | Maledict (original) + Ice Blast (red) |
+| Spiritual Overflow | 4 | Essence Shift (original) + Kaya (red) + Voodoo Mask (original) |
 | Transcendent Cooldown | 4 | Octarine Core (red) |
 | Unstoppable | 4 | Black King Bar (original) |
-| Vampiric Burst | 4 | Satanic (original) + Moon Shard (original) |
+| Vampiric Burst | 4 | Satanic (red) + Moon Shard (red) |
 | Vortex Web | 4 | Vacuum (original) |
 | Celestial Blessing | 5 | Hand of God (original) |
-| Cloak of Opportunity | 5 | Linken's Sphere (red) + Black King Bar (red) |
+| Cloak of Opportunity | 5 | Linken's Sphere (original) + Black King Bar (original) |
 | Electric Slippers | 5 | Ion Shell (original) |
 | Eternal Gift | 5 | Reincarnation (original) |
-| Frostbite Charm | 5 | Frostbite (red) + Octarine Core (red) |
-| Haunting Shot | 5 | Mage Slayer (red) + Spirit Vessel (red) |
+| Frostbite Charm | 5 | Frostbite (original) + Octarine Core (red) |
+| Haunting Shot | 5 | Mage Slayer (gold) + Spirit Vessel (original) |
 | Infinite Rounds | 5 | Monkey King Bar (red) |
-| Mystic Conduit | 5 | Vladmir's Offering (original) + Bloodstone (red) |
+| Mystic Conduit | 5 | Vladmir's Offering (original) + Bloodstone (original) |
 | Mystical Piano | 5 | Meteor Hammer (original) |
 | Nullification Burst | 5 | Nullifier (red) |
 | Prism Blast | 5 | Supernova (original) |
 | Seraphim Wings | 5 | Icarus Dive (original) |
-| Shadow Strike | 5 | Skeleton Walk (original) + Essence Shift (red) |
+| Shadow Strike | 5 | Skeleton Walk (original) + Essence Shift (original) |
 | Shrink Ray | 5 | Fade Bolt (original) |
 | Unstable Concoction | 5 | Chemical Rage (original) + Blast Off! (original) |
 
-Dispel Magic uses Press the Attack and Puckish. Puck’s portrait identifies the owner of the shared innate glyph.
-
-Native icons are retained for ammunition, reload, stamina and other choices where the owner kept the Deadlock image.
+Dispel Magic pairs Press the Attack with Puck’s innate and portrait. Mercurial Magnum uses the standard Overload icon and Aghanim’s Shard.
