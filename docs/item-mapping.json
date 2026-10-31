@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-23",
-  "version": "v25",
+  "date": "2026-10-31",
+  "version": "v27",
   "items": [
     {
       "deadlock_id": "upgrade_non_player_bonus",
@@ -589,24 +589,18 @@
     {
       "deadlock_id": "upgrade_fervor",
       "deadlock_name": "Frenzy",
-      "dota_id": "huskar_berserkers_blood",
-      "dota_name": "Berserker's Blood + Sange and Yasha + Morbid Mask + Moon Shard",
+      "dota_id": "sange_and_yasha",
+      "dota_name": "Sange and Yasha + Morbid Mask + Moon Shard",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
-      "source_texture": "panorama/images/spellicons/huskar_berserkers_blood_png.vtex_c",
+      "shared_function": "Сопротивление эффектам, Bullet-вампиризм и усиление стрельбы при низком HP",
+      "differences": "Владелец убрал Berserker’s Blood. Реген не изображается; условие низкого HP задаёт Deadlock. Пассивный вампиризм не складывается с условной скоростью стрельбы для подбора цвета.",
+      "source_texture": "panorama/images/items/sange_and_yasha_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/frenzy_psd.vtex_c",
         "panorama/images/upgrades/mods_weapon/fervor_psd.vtex_c"
       ],
       "tier": 4,
       "sources": [
-        {
-          "id": "ability:huskar_berserkers_blood",
-          "name": "Berserker's Blood",
-          "texture": "panorama/images/spellicons/huskar_berserkers_blood_png.vtex_c",
-          "cost": null
-        },
         {
           "id": "item:sange_and_yasha",
           "name": "Sange and Yasha",
@@ -629,44 +623,34 @@
       "color_variant": "mixed",
       "component_colors": [
         {
-          "source": "ability:huskar_berserkers_blood",
-          "tone": "original"
-        },
-        {
           "source": "item:sange_and_yasha",
-          "tone": "red"
+          "tone": "gold"
         },
         {
           "source": "item:lifesteal",
-          "tone": "red"
+          "tone": "original"
         },
         {
           "source": "item:moon_shard",
-          "tone": "original"
+          "tone": "red"
         }
       ]
     },
     {
       "deadlock_id": "upgrade_siphon_bullets",
       "deadlock_name": "Siphon Bullets",
-      "dota_id": "undying_decay",
-      "dota_name": "Decay + Essence Shift",
+      "dota_id": "slark_essence_shift",
+      "dota_name": "Essence Shift + Deadlock HP",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
-      "source_texture": "panorama/images/spellicons/undying_decay_png.vtex_c",
+      "shared_function": "Накопление украденного здоровья",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
+      "source_texture": "panorama/images/spellicons/slark_essence_shift_png.vtex_c",
       "target_textures": [
         "panorama/images/items/vitality/siphon_bullets_psd.vtex_c",
         "panorama/images/upgrades/mods_weapon/siphon_bullets_psd.vtex_c"
       ],
       "tier": 4,
       "sources": [
-        {
-          "id": "ability:undying_decay",
-          "name": "Decay",
-          "texture": "panorama/images/spellicons/undying_decay_png.vtex_c",
-          "cost": null
-        },
         {
           "id": "ability:slark_essence_shift",
           "name": "Essence Shift",
@@ -677,12 +661,23 @@
       "color_variant": "original",
       "component_colors": [
         {
-          "source": "ability:undying_decay",
-          "tone": "original"
-        },
-        {
           "source": "ability:slark_essence_shift",
           "tone": "original"
+        }
+      ],
+      "stat_badges": [
+        {
+          "stat": "health",
+          "source": "panorama/images/icons/properties/health.vsvg_c",
+          "svg_sha256": "9cb79dc278be536cd317b3195595467334214b0ff567257f14538be0e6f7abc1",
+          "position": [
+            139,
+            113
+          ],
+          "size": [
+            62,
+            62
+          ]
         }
       ]
     },
@@ -782,10 +777,10 @@
       "deadlock_id": "upgrade_headhunter",
       "deadlock_name": "Headhunter",
       "dota_id": "sniper_headshot",
-      "dota_name": "Headshot + Morbid Mask + Wind Lace",
+      "dota_name": "Headshot + Moment of Courage + Wind Lace",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Дополнительный урон попадания в голову; Лечение от попадания в голову; Временная скорость после попадания в голову, м/с",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
       "source_texture": "panorama/images/spellicons/sniper_headshot_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/headhunter_psd.vtex_c",
@@ -800,10 +795,10 @@
           "cost": null
         },
         {
-          "id": "item:lifesteal",
-          "name": "Morbid Mask",
-          "texture": "panorama/images/items/lifesteal_png.vtex_c",
-          "cost": 900
+          "id": "ability:legion_commander_moment_of_courage",
+          "name": "Moment of Courage",
+          "texture": "panorama/images/spellicons/legion_commander_moment_of_courage_png.vtex_c",
+          "cost": null
         },
         {
           "id": "item:wind_lace",
@@ -819,7 +814,7 @@
           "tone": "gold"
         },
         {
-          "source": "item:lifesteal",
+          "source": "ability:legion_commander_moment_of_courage",
           "tone": "original"
         },
         {
@@ -832,10 +827,10 @@
       "deadlock_id": "upgrade_spellslinger_headshots",
       "deadlock_name": "Spirit Rend",
       "dota_id": "grove_bow",
-      "dota_name": "Grove Bow + Headshot",
+      "dota_name": "Grove Bow + Voodoo Mask + Headshot",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Снижение Spirit-сопротивления, %; Spirit-вампиризм, %; Условие: попадание в голову",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
       "source_texture": "panorama/images/items/grove_bow_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/spellslinger_headshots_psd.vtex_c",
@@ -850,6 +845,12 @@
           "cost": 0
         },
         {
+          "id": "item:voodoo_mask",
+          "name": "Voodoo Mask",
+          "texture": "panorama/images/items/voodoo_mask_png.vtex_c",
+          "cost": 650
+        },
+        {
           "id": "ability:sniper_headshot",
           "name": "Headshot",
           "texture": "panorama/images/spellicons/sniper_headshot_png.vtex_c",
@@ -860,6 +861,10 @@
       "component_colors": [
         {
           "source": "item:grove_bow",
+          "tone": "original"
+        },
+        {
+          "source": "item:voodoo_mask",
           "tone": "original"
         },
         {
@@ -1001,10 +1006,10 @@
       "deadlock_id": "upgrade_toxic_bullets",
       "deadlock_name": "Toxic Bullets",
       "dota_id": "viper_poison_attack",
-      "dota_name": "Poison Attack + Feast + Orb of Venom",
+      "dota_name": "Poison Attack + Feast + Eye of Skadi",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Периодический урон, % максимального здоровья в секунду; Урон относительно здоровья цели; Снижение получаемого лечения, %",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
       "source_texture": "panorama/images/spellicons/viper_poison_attack_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/toxic_bullets_psd.vtex_c",
@@ -1025,10 +1030,10 @@
           "cost": null
         },
         {
-          "id": "item:orb_of_venom",
-          "name": "Orb of Venom",
-          "texture": "panorama/images/items/orb_of_venom_png.vtex_c",
-          "cost": 350
+          "id": "item:skadi",
+          "name": "Eye of Skadi",
+          "texture": "panorama/images/items/skadi_png.vtex_c",
+          "cost": 5900
         }
       ],
       "color_variant": "original",
@@ -1042,7 +1047,7 @@
           "tone": "original"
         },
         {
-          "source": "item:orb_of_venom",
+          "source": "item:skadi",
           "tone": "original"
         }
       ]
@@ -1169,10 +1174,10 @@
       "deadlock_id": "upgrade_reduce_debuff_duration",
       "deadlock_name": "Dispel Magic",
       "dota_id": "legion_commander_press_the_attack",
-      "dota_name": "Press The Attack + Puckish (Puck innate)",
+      "dota_name": "Press The Attack",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Активное снятие дебаффов и исцеление",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
       "source_texture": "panorama/images/spellicons/legion_commander_press_the_attack_png.vtex_c",
       "target_textures": [
         "panorama/images/items/vitality/debuff_remover_psd.vtex_c",
@@ -1185,22 +1190,12 @@
           "name": "Press The Attack",
           "texture": "panorama/images/spellicons/legion_commander_press_the_attack_png.vtex_c",
           "cost": null
-        },
-        {
-          "id": "ability:puck_puckish",
-          "name": "Puckish (Puck innate)",
-          "texture": "panorama/images/hud/facets/innate_icon_large_png.vtex_c",
-          "cost": 0
         }
       ],
       "color_variant": "original",
       "component_colors": [
         {
           "source": "ability:legion_commander_press_the_attack",
-          "tone": "original"
-        },
-        {
-          "source": "ability:puck_puckish",
           "tone": "original"
         }
       ]
@@ -1524,28 +1519,28 @@
     {
       "deadlock_id": "upgrade_bullet_armor_reduction_aura",
       "deadlock_name": "Hunter's Aura",
-      "dota_id": "assault",
-      "dota_name": "Assault Cuirass",
+      "dota_id": "nevermore_dark_lord",
+      "dota_name": "Presence of the Dark Lord",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
-      "source_texture": "panorama/images/items/assault_png.vtex_c",
+      "shared_function": "Аура снижения сопротивления физическим атакам",
+      "differences": "Выбран один образ SF. Замедление стрельбы и удвоение против единственного врага остаются механиками Deadlock, отдельными вставками не изображаются.",
+      "source_texture": "panorama/images/spellicons/nevermore_dark_lord_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/hunters_aura_psd.vtex_c"
       ],
       "tier": 3,
       "sources": [
         {
-          "id": "item:assault",
-          "name": "Assault Cuirass",
-          "texture": "panorama/images/items/assault_png.vtex_c",
-          "cost": 5125
+          "id": "ability:nevermore_dark_lord",
+          "name": "Presence of the Dark Lord",
+          "texture": "panorama/images/spellicons/nevermore_dark_lord_png.vtex_c",
+          "cost": null
         }
       ],
       "color_variant": "original",
       "component_colors": [
         {
-          "source": "item:assault",
+          "source": "ability:nevermore_dark_lord",
           "tone": "original"
         }
       ]
@@ -1787,12 +1782,12 @@
     {
       "deadlock_id": "upgrade_tech_overflow",
       "deadlock_name": "Spiritual Overflow",
-      "dota_id": "slark_essence_shift",
-      "dota_name": "Essence Shift + Kaya + Voodoo Mask",
+      "dota_id": "troll_warlord_fervor",
+      "dota_name": "Fervor + Kaya + Voodoo Mask",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
-      "source_texture": "panorama/images/spellicons/slark_essence_shift_png.vtex_c",
+      "shared_function": "Накопление усиления от стрельбы; Временный бонус Spirit после накопления; Дополнительный Spirit-вампиризм во время усиления: 10 процентных пунктов; пассивные 13% отдельно, без предположения о сложении",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
+      "source_texture": "panorama/images/spellicons/troll_warlord_fervor_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/spiritual_overflow_psd.vtex_c",
         "panorama/images/upgrades/mods_weapon/magic_overflow_psd.vtex_c"
@@ -1800,9 +1795,9 @@
       "tier": 4,
       "sources": [
         {
-          "id": "ability:slark_essence_shift",
-          "name": "Essence Shift",
-          "texture": "panorama/images/spellicons/slark_essence_shift_png.vtex_c",
+          "id": "ability:troll_warlord_fervor",
+          "name": "Fervor",
+          "texture": "panorama/images/spellicons/troll_warlord_fervor_png.vtex_c",
           "cost": null
         },
         {
@@ -1821,7 +1816,7 @@
       "color_variant": "mixed",
       "component_colors": [
         {
-          "source": "ability:slark_essence_shift",
+          "source": "ability:troll_warlord_fervor",
           "tone": "original"
         },
         {
@@ -2568,27 +2563,27 @@
     {
       "deadlock_id": "upgrade_discord",
       "deadlock_name": "Scourge",
-      "dota_id": "ember_spirit_flame_guard",
-      "dota_name": "Flame Guard + Heartstopper Aura + Demonic Cleanse",
+      "dota_id": "necrolyte_heartstopper_aura",
+      "dota_name": "Heartstopper Aura + Hood of Defiance + Demonic Cleanse",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
-      "source_texture": "panorama/images/spellicons/ember_spirit_flame_guard_png.vtex_c",
+      "shared_function": "Урон ауры, % максимального здоровья в секунду; Spirit-сопротивление, %; Очищение отрицательных эффектов",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
+      "source_texture": "panorama/images/spellicons/necrolyte_heartstopper_aura_png.vtex_c",
       "target_textures": [
         "panorama/images/items/spirit/scourge_psd.vtex_c"
       ],
       "tier": 4,
       "sources": [
         {
-          "id": "ability:ember_spirit_flame_guard",
-          "name": "Flame Guard",
-          "texture": "panorama/images/spellicons/ember_spirit_flame_guard_png.vtex_c",
-          "cost": null
-        },
-        {
           "id": "ability:necrolyte_heartstopper_aura",
           "name": "Heartstopper Aura",
           "texture": "panorama/images/spellicons/necrolyte_heartstopper_aura_png.vtex_c",
+          "cost": null
+        },
+        {
+          "id": "item:hood_of_defiance",
+          "name": "Hood of Defiance",
+          "texture": "panorama/images/items/hood_of_defiance_png.vtex_c",
           "cost": null
         },
         {
@@ -2601,12 +2596,12 @@
       "color_variant": "mixed",
       "component_colors": [
         {
-          "source": "ability:ember_spirit_flame_guard",
-          "tone": "original"
-        },
-        {
           "source": "ability:necrolyte_heartstopper_aura",
           "tone": "gold"
+        },
+        {
+          "source": "item:hood_of_defiance",
+          "tone": "red"
         },
         {
           "source": "ability:shadow_demon_demonic_cleanse",
@@ -3675,10 +3670,10 @@
       "deadlock_id": "upgrade_acolytes_glove",
       "deadlock_name": "Spirit Strike",
       "dota_id": "witch_blade",
-      "dota_name": "Witch Blade + Mage Slayer",
+      "dota_name": "Witch Blade + Grove Bow",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Spirit-урон от удара; Снижение Spirit-сопротивления, %",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
       "source_texture": "panorama/images/items/witch_blade_png.vtex_c",
       "target_textures": [
         "panorama/images/items/spirit/spirit_strike_psd.vtex_c",
@@ -3693,10 +3688,10 @@
           "cost": 2775
         },
         {
-          "id": "item:mage_slayer",
-          "name": "Mage Slayer",
-          "texture": "panorama/images/items/mage_slayer_png.vtex_c",
-          "cost": 3100
+          "id": "item:grove_bow",
+          "name": "Grove Bow",
+          "texture": "panorama/images/items/grove_bow_png.vtex_c",
+          "cost": 0
         }
       ],
       "color_variant": "original",
@@ -3706,7 +3701,7 @@
           "tone": "original"
         },
         {
-          "source": "item:mage_slayer",
+          "source": "item:grove_bow",
           "tone": "original"
         }
       ]
@@ -3715,10 +3710,10 @@
       "deadlock_id": "upgrade_spirit_snatch",
       "deadlock_name": "Spirit Snatch",
       "dota_id": "devastator",
-      "dota_name": "Parasma + Mage Slayer",
+      "dota_name": "Parasma + Grove Bow",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Spirit-урон и похищение свойств; Похищение Spirit-сопротивления, %",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
       "source_texture": "panorama/images/items/devastator_png.vtex_c",
       "target_textures": [
         "panorama/images/items/spirit/spirit_snatch_psd.vtex_c",
@@ -3733,21 +3728,21 @@
           "cost": 5975
         },
         {
-          "id": "item:mage_slayer",
-          "name": "Mage Slayer",
-          "texture": "panorama/images/items/mage_slayer_png.vtex_c",
-          "cost": 3100
+          "id": "item:grove_bow",
+          "name": "Grove Bow",
+          "texture": "panorama/images/items/grove_bow_png.vtex_c",
+          "cost": 0
         }
       ],
-      "color_variant": "original",
+      "color_variant": "mixed",
       "component_colors": [
         {
           "source": "item:devastator",
           "tone": "original"
         },
         {
-          "source": "item:mage_slayer",
-          "tone": "original"
+          "source": "item:grove_bow",
+          "tone": "gold"
         }
       ]
     },
@@ -4254,12 +4249,12 @@
     {
       "deadlock_id": "upgrade_medic_bullets",
       "deadlock_name": "Restorative Shot",
-      "dota_id": "lifesteal",
-      "dota_name": "Morbid Mask",
+      "dota_id": "legion_commander_moment_of_courage",
+      "dota_name": "Moment of Courage",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
-      "source_texture": "panorama/images/items/lifesteal_png.vtex_c",
+      "shared_function": "Лечение от периодического попадания",
+      "differences": "Только изображение. Триггеры и числа Deadlock сохраняются; механики Dota не добавляются.",
+      "source_texture": "panorama/images/spellicons/legion_commander_moment_of_courage_png.vtex_c",
       "target_textures": [
         "panorama/images/items/weapon/restorative_shot_psd.vtex_c",
         "panorama/images/upgrades/mods_weapon/medic_bullets_psd.vtex_c"
@@ -4267,16 +4262,16 @@
       "tier": 1,
       "sources": [
         {
-          "id": "item:lifesteal",
-          "name": "Morbid Mask",
-          "texture": "panorama/images/items/lifesteal_png.vtex_c",
-          "cost": 900
+          "id": "ability:legion_commander_moment_of_courage",
+          "name": "Moment of Courage",
+          "texture": "panorama/images/spellicons/legion_commander_moment_of_courage_png.vtex_c",
+          "cost": null
         }
       ],
       "color_variant": "original",
       "component_colors": [
         {
-          "source": "item:lifesteal",
+          "source": "ability:legion_commander_moment_of_courage",
           "tone": "original"
         }
       ]
@@ -4510,10 +4505,10 @@
       "deadlock_id": "upgrade_deflecting_armor",
       "deadlock_name": "Plated Armor",
       "dota_id": "butterfly",
-      "dota_name": "Butterfly + Vanguard",
+      "dota_name": "Butterfly",
       "include": true,
-      "shared_function": "Выбор владельца по механике",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Выбранная владельцем иконка уменьшения входящего урона атак",
+      "differences": "Deadlock снижает урон атак; это не механика полного уклонения Dota. Оставлена только Butterfly по уточнённому выбору владельца.",
       "source_texture": "panorama/images/items/butterfly_png.vtex_c",
       "target_textures": [
         "panorama/images/items/vitality/plated_armor_psd.vtex_c"
@@ -4525,22 +4520,12 @@
           "name": "Butterfly",
           "texture": "panorama/images/items/butterfly_png.vtex_c",
           "cost": 5450
-        },
-        {
-          "id": "item:vanguard",
-          "name": "Vanguard",
-          "texture": "panorama/images/items/vanguard_png.vtex_c",
-          "cost": 1700
         }
       ],
       "color_variant": "original",
       "component_colors": [
         {
           "source": "item:butterfly",
-          "tone": "original"
-        },
-        {
-          "source": "item:vanguard",
           "tone": "original"
         }
       ]
@@ -5124,8 +5109,8 @@
       "dota_id": "clinkz_wind_walk",
       "dota_name": "Skeleton Walk + Essence Shift",
       "include": true,
-      "shared_function": "Невидимость и кража характеристик ударом",
-      "differences": "Визуальный аналог; игровые механики Deadlock сохранены.",
+      "shared_function": "Невидимость и похищение Bullet/Spirit Resistance ударом",
+      "differences": "Родной знак защиты уточняет, что Essence Shift обозначает кражу сопротивлений, а не HP или атрибутов Dota.",
       "source_texture": "panorama/images/spellicons/clinkz_wind_walk_png.vtex_c",
       "target_textures": [
         "panorama/images/items/brawl/shadow_strike_psd.vtex_c"
@@ -5154,6 +5139,21 @@
         {
           "source": "ability:slark_essence_shift",
           "tone": "original"
+        }
+      ],
+      "stat_badges": [
+        {
+          "stat": "bullet_and_spirit_resistance",
+          "source": "panorama/images/icons/properties/armor.vsvg_c",
+          "svg_sha256": "b571a8cdcc596ecc607d6b0594d3b4c52a94f165bce90be94b3bd65a021f2e7b",
+          "position": [
+            139,
+            113
+          ],
+          "size": [
+            62,
+            62
+          ]
         }
       ]
     },

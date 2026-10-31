@@ -1,5 +1,11 @@
-V25 updates the item icons. Fifty-two composite icons have been refitted for circular HUD slots, with larger secondary components. Since V19, component colors have also been matched to their Deadlock bonuses; Mercurial Magnum uses standard Overload plus Aghanim’s Shard. The item table lists the current sources and colors.
+Updated item icons and fixed startup after the October 30 Deadlock update (client6833).
 
-Existing effects keep their appearance. Seven visual bindings have been reapplied to the current game’s ability file so the update retains the new native definitions. This release does not add BKB, Ghost Scepter or Blade Mail effects. Character skins and voices are separate.
+- Revised the composite icons and their individual upgrade colors since V25.
+- Scourge now uses Heartstopper Aura, Hood and Demonic Cleanse. Spiritual Overflow uses Fervor.
+- Hunter’s Aura uses SF’s passive; Plated Armor uses Butterfly. Frenzy keeps Sange and Yasha, Morbid Mask and Moon Shard, without Huskar.
+- Added a health marker to Siphon Bullets and a resistance marker to Shadow Strike. Spirit Strike and Spirit Snatch use Grove Bow for resistance reduction.
+- Restorative Shot and Headhunter use Moment of Courage; Dispel Magic uses Press the Attack alone.
 
-Download dota2-to-deadlock-v25-r2-dmm.zip. Disable the previous version, import the ZIP into your manager and enable all five components. Deadlock Mod Manager, Grimoire and HELLCAT are supported. Manual installation is in the English and Russian README files. The three V25 icon sheets are new; the gameplay screenshots and video are from V19.
+The four shop screenshots show V27. Existing effects keep their previous appearance. No character models, voices, BKB, Ghost or Blade Mail effects are added.
+
+Close Deadlock and your mod manager, disable the old version, then install **dota2-to-deadlock-v27-dmm.zip** and enable all five components. Manual installation is in the English and Russian README files.

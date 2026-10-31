@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026.10.23-v25",
+  "version": "2026.10.31-v27",
   "platform": "Windows",
   "packages": [
     {
       "file": "pak06_dir.vpk",
       "component": "Item icons",
       "description": "154 mapped definitions; 228 textures; 19 native icons retained",
-      "revision": "v25: 52 composite icons refitted for circular HUD crops; component stat colors and Dota sources updated since v19",
-      "bytes": 11261369,
-      "sha256": "429ed44fbc20a0ac14e819d79f4b8e8e43512480e5a0b354465867913898a22a"
+      "revision": "v27: revised item sources, diagonal composites and health/resistance theft badges",
+      "bytes": 11134178,
+      "sha256": "bea39213bc288840a6bb78743ac5eff809b265ff4c78c91bfc425d98e4f260d4"
     },
     {
       "file": "pak07_dir.vpk",
@@ -31,9 +31,9 @@
       "file": "pak09_dir.vpk",
       "component": "Shiva and barrier bindings",
       "description": "Cold Front wave, red Arctic Blast/Frostbite and passive barrier visual bindings",
-      "revision": "Seven existing visual bindings rebased on native build 26147187",
-      "bytes": 5876614,
-      "sha256": "7831c132ebffe2bd46c18ca10577b82e881689e0c40f81c6351c4fd472da88e2"
+      "revision": "Seven public visual bindings rebased on Deadlock client6833; no Shura state marker",
+      "bytes": 5878789,
+      "sha256": "19a77e070e9428fa32ef3f3f820904bb226a0389fac9d7171d071f6cd29ebc60"
     },
     {
       "file": "pak10_dir.vpk",
@@ -46,20 +46,20 @@
   ],
   "notes": [
     "154 mapped definitions; 19 native icons retained. Counts include upgrades and mode-specific entries.",
-    "Composite components use Deadlock stat magnitudes to select upgrade colors. Native icons and shared ability paths stay unchanged.",
-    "Counterspell, Refresher, Shiva/Arctic Blast/Frostbite and shared Pavise barriers. No hero skins or voices.",
-    "Native ability resource is checked by the Python installer; managers and manual copying do not execute that check.",
-    "V25 icon previews and packed pixels checked; owner authorized public release after local use. Earlier V19 gameplay media is retained and labeled. This release adds no effects or skins."
+    "Dota artwork; the displayed item stats and prices remain Deadlock's. Component colors follow individual Deadlock bonuses.",
+    "Counterspell, Refresher, Cold Front/Arctic Blast/Frostbite and Pavise barriers. No hero skins or voices.",
+    "The Python installer checks the native ability file; manual installation and mod managers do not run that check.",
+    "Owner checked the V27 shop icons and supplied the four price-tier screenshots. Existing effect visuals are unchanged; no BKB, Ghost or Blade Mail effect is added."
   ],
-  "source_steam_build_id": "26147187",
+  "source_steam_build_id": "26335443",
   "compatibility_checks": {
     "scripts/abilities.vdata_c": {
-      "sha256": "307f5303832141a2ffda63841f3c8709b0007a08c07ad8939412d0dadae900fc",
+      "sha256": "e7628b533d1d3e86009b106f9bd2472b7de7117b22f737c82b1c344412f48de0",
       "matched_stock_build_ids": [
-        "26147187"
+        "26335443"
       ],
       "scope": "Stock ability resource equality only; not full runtime acceptance."
     }
   },
-  "verified_stock_build_id": "26147187"
+  "verified_stock_build_id": "26335443"
 }

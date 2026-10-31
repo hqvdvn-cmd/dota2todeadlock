@@ -1,10 +1,8 @@
 # Item icons / Иконки предметов
 
-154 replacements; 19 definitions retain native icons. Counts include upgrades and mode-specific entries.
+154 replaced definitions, including upgrades and mode-specific items. 19 keep native icons. Dota supplies the artwork; Deadlock supplies the stats.
 
-Dota artwork; component upgrade colors follow the selected Deadlock stat magnitude.
-
-| Deadlock | Tier | Dota source and color |
+| Deadlock | Tier | Dota artwork |
 | --- | --- | --- |
 | Close Quarters | 1 | Tag Team (original) |
 | Extra Health | 1 | Vitality Booster (original) |
@@ -21,9 +19,9 @@ Dota artwork; component upgrade colors follow the selected Deadlock stat magnitu
 | Mystic Regeneration | 1 | Voodoo Mask (original) |
 | Rapid Rounds | 1 | Gloves of Haste (original) |
 | Rebuttal | 1 | Spiked Carapace (original) |
-| Restorative Shot | 1 | Morbid Mask (original) |
+| Restorative Shot | 1 | Moment of Courage (original) |
 | Rusted Barrel | 1 | medallion_of_courage (original) |
-| Spirit Strike | 1 | Witch Blade (original) + Mage Slayer (original) |
+| Spirit Strike | 1 | Witch Blade (original) + Grove Bow (original) |
 | Sprint Boots | 1 | Tranquil Boots (original) |
 | Arcane Surge | 2 | Overload (original) |
 | Bullet Lifesteal | 2 | Morbid Mask (gold) |
@@ -70,16 +68,16 @@ Dota artwork; component upgrade colors follow the selected Deadlock stat magnitu
 | Cultist Sacrifice | 3 | Hand of Midas (original) |
 | Decay | 3 | Spirit Vessel (red) |
 | Disarming Hex | 3 | Heaven's Halberd (original) |
-| Dispel Magic | 3 | Press The Attack (original) + Puckish (Puck innate) (original) |
+| Dispel Magic | 3 | Press The Attack (original) |
 | Escalating Resilience | 3 | Reactive Armor (original) |
 | Express Shot | 3 | Geminate Attack (original) |
 | Fortitude | 3 | Tranquil Boots (original) + Heart of Tarrasque (original) |
 | Fury Trance | 3 | Mask of Madness (original) |
 | Greater Expansion | 3 | chasm_stone (gold) + Aether Lens (gold) |
-| Headhunter | 3 | Headshot (gold) + Morbid Mask (original) + Wind Lace (original) |
+| Headhunter | 3 | Headshot (gold) + Moment of Courage (original) + Wind Lace (original) |
 | Healing Nova | 3 | Mekansm (original) |
 | Heroic Aura | 3 | Drum of Endurance (gold) + Assault Cuirass (original) |
-| Hunter's Aura | 3 | Assault Cuirass (original) |
+| Hunter's Aura | 3 | Presence of the Dark Lord (original) |
 | Knockdown | 3 | Cursed Crown (original) |
 | Lifestrike | 3 | Feast (gold) + Open Wounds (gold) |
 | Metal Skin | 3 | Ghost Scepter (original) |
@@ -89,16 +87,16 @@ Dota artwork; component upgrade colors follow the selected Deadlock stat magnitu
 | Shadow Weave | 3 | Shadow Blade (original) |
 | Sharpshooter | 3 | Dragon Lance (black) |
 | Silence Wave | 3 | Silence (original) |
-| Spirit Rend | 3 | Grove Bow (original) + Headshot (original) |
+| Spirit Rend | 3 | Grove Bow (original) + Voodoo Mask (original) + Headshot (original) |
 | Spirit Resilience | 3 | Eternal Shroud (original) |
-| Spirit Snatch | 3 | Parasma (original) + Mage Slayer (original) |
+| Spirit Snatch | 3 | Parasma (original) + Grove Bow (gold) |
 | Superior Cooldown | 3 | Octarine Core (gold) |
 | Superior Duration | 3 | Timeless Relic (red) |
 | Surge of Power | 3 | Fiery Soul (original) + Kaya (red) |
 | Tankbuster | 3 | Phylactery (original) + Static Field (original) |
 | Tesla Bullets | 3 | Maelstrom (original) |
 | Torment Pulse | 3 | Radiance (original) |
-| Toxic Bullets | 3 | Poison Attack (original) + Feast (original) + Orb of Venom (original) |
+| Toxic Bullets | 3 | Poison Attack (original) + Feast (original) + Eye of Skadi (original) |
 | Veil Walker | 3 | Glimmer Cape (original) |
 | Warp Stone | 3 | Blink Dagger (original) |
 | Weighted Shots | 3 | Viscous Nasal Goo (original) + Sange and Yasha (original) + Crystalys (original) |
@@ -117,7 +115,7 @@ Dota artwork; component upgrade colors follow the selected Deadlock stat magnitu
 | Escalating Exposure | 4 | Veil of Discord (red) |
 | Ethereal Shift | 4 | Shadow Realm (original) |
 | Focus Lens | 4 | Orchid Malevolence (original) + Mage Slayer (original) + Veil of Discord (original) |
-| Frenzy | 4 | Berserker's Blood (original) + Sange and Yasha (red) + Morbid Mask (red) + Moon Shard (original) |
+| Frenzy | 4 | Sange and Yasha (gold) + Morbid Mask (original) + Moon Shard (red) |
 | Glass Cannon | 4 | Divine Rapier (original) |
 | Healing Tempo | 4 | Holy Locket (gold) + Bloodlust (red) |
 | Indomitable | 4 | Linken's Sphere (original) + Pavise (gold) + Octarine Core (gold) |
@@ -131,16 +129,16 @@ Dota artwork; component upgrade colors follow the selected Deadlock stat magnitu
 | Mercurial Magnum | 4 | Overload (original) + Aghanim’s Shard (original) |
 | Mystic Reverb | 4 | Disseminate (original) |
 | Phantom Strike | 4 | Phantom Strike (original) + Heaven's Halberd (original) |
-| Plated Armor | 4 | Butterfly (original) + Vanguard (original) |
+| Plated Armor | 4 | Butterfly (original) |
 | Refresher | 4 | Refresher Orb (original) |
 | Ricochet | 4 | Moon Glaives (original) |
-| Scourge | 4 | Flame Guard (original) + Heartstopper Aura (gold) + Demonic Cleanse (original) |
+| Scourge | 4 | Heartstopper Aura (gold) + Hood of Defiance (red) + Demonic Cleanse (original) |
 | Silencer | 4 | Mage Slayer (original) + mind_breaker (original) |
-| Siphon Bullets | 4 | Decay (original) + Essence Shift (original) |
+| Siphon Bullets | 4 | Essence Shift (original) + Deadlock health glyph |
 | Spellbreaker | 4 | Dandelion Amulet (original) |
 | Spellslinger | 4 | Warpath (original) |
 | Spirit Burn | 4 | Maledict (original) + Ice Blast (red) |
-| Spiritual Overflow | 4 | Essence Shift (original) + Kaya (red) + Voodoo Mask (original) |
+| Spiritual Overflow | 4 | Fervor (original) + Kaya (red) + Voodoo Mask (original) |
 | Transcendent Cooldown | 4 | Octarine Core (red) |
 | Unstoppable | 4 | Black King Bar (original) |
 | Vampiric Burst | 4 | Satanic (red) + Moon Shard (red) |
@@ -157,8 +155,10 @@ Dota artwork; component upgrade colors follow the selected Deadlock stat magnitu
 | Nullification Burst | 5 | Nullifier (red) |
 | Prism Blast | 5 | Supernova (original) |
 | Seraphim Wings | 5 | Icarus Dive (original) |
-| Shadow Strike | 5 | Skeleton Walk (original) + Essence Shift (original) |
+| Shadow Strike | 5 | Skeleton Walk (original) + Essence Shift (original) + Deadlock bullet_and_spirit_resistance glyph |
 | Shrink Ray | 5 | Fade Bolt (original) |
 | Unstable Concoction | 5 | Chemical Rage (original) + Blast Off! (original) |
 
-Dispel Magic pairs Press the Attack with Puck’s innate and portrait. Mercurial Magnum uses the standard Overload icon and Aghanim’s Shard.
+Hunter’s Aura uses only Presence of the Dark Lord. Plated Armor uses only Butterfly. Frenzy uses Sange and Yasha, Morbid Mask and Moon Shard. Dispel Magic uses only Press the Attack. Mercurial Magnum uses regular Overload and the Aghanim’s Shard item icon.
+
+These are visual comparisons. A Dota image does not add its original mechanics to the Deadlock item.
